@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <title>Ludo Club</title>
     <link rel="stylesheet" href="asserts/css%20normalize/normalize.css">
+    <link rel="icon" href="asserts/images/ludoo%20icon.png">
     <style>
+        #splash_container{
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            background: white;
+        }
 
+        #splash_container>img:nth-child(1){
+            width: 800px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        #splash_container>img:nth-child(2){
+            width: 110px;
+            position: absolute;
+            margin: auto;
+            left: 40px;
+            top: 100px;
+            bottom: 0;
+            right: 0;
+        }
     </style>
 </head>
 <body>
+
+    <div id="splash_container">
+        <img src="asserts/images/ludoo%20logo.jpg" alt="">
+        <img src="asserts/images/loader.gif" alt="">
+    </div>
 
 </body>
 </html>
