@@ -32,6 +32,72 @@
             bottom: 0;
             right: 0;
         }
+
+        #manu_container>img:nth-child(1){
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #cardOne {
+            width: 90%;
+            max-width: 200px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.2);*/
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 55%;
+            margin: auto;
+        }
+
+        #cardTwo {
+            width: 90%;
+            max-width: 200px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.2);*/
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #cardThree {
+            width: 90%;
+            max-width: 200px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.2);*/
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 55%;
+            right: 0;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
@@ -40,10 +106,20 @@
         <img src="asserts/images/ludoo%20logo.jpg" alt="">
         <img src="asserts/images/loader.gif" alt="">
     </div>
+    
+    <div id="manu_container">
+        <img src="asserts/images/manu%20bg.jpg" alt="">
+        <div id="cardOne"></div>
+        <div id="cardTwo"></div>
+        <div id="cardThree"></div>
+    </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
 <script>
-
+    $(window).on('load',function () {
+        console.log("Window Loaded");
+        $("#splash_container").fadeOut(1000);
+    });
 </script>
 
 </body>
