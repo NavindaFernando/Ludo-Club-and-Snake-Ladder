@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Ludo Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asserts/css%20normalize/normalize.css">
     <link rel="icon" href="asserts/images/ludoo%20icon.png">
     <style>
@@ -55,7 +58,7 @@
             top: 0;
             bottom: 0;
             left: 0;
-            right: 55%;
+            right: 60%;
             margin: auto;
         }
 
@@ -94,10 +97,42 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 55%;
+            left: 60%;
             right: 0;
             margin: auto;
         }
+
+        #cardOne>img{
+            position: relative;
+            top: 100px;
+            width: 250px;
+        }
+
+        #cardTwo>img{
+            position: relative;
+            top: 100px;
+            width: 250px;
+        }
+
+        #cardThree>img{
+            position: relative;
+            top: 100px;
+            width: 250px;
+        }
+
+        /*#numberTwo{
+            position: relative;
+            font-size: 80px;
+        }
+
+        #twoPlayers{
+            position: relative;
+            bottom: 140px;
+            font-size: 40px;
+            font-family: 'Jost', sans-serif;
+            font-weight: bold;
+        }*/
+
     </style>
 </head>
 <body>
@@ -106,12 +141,23 @@
         <img src="asserts/images/ludoo%20logo.jpg" alt="">
         <img src="asserts/images/loader.gif" alt="">
     </div>
-    
+
     <div id="manu_container">
         <img src="asserts/images/manu%20bg.jpg" alt="">
-        <div id="cardOne" data-tilt></div>
-        <div id="cardTwo" data-tilt></div>
-        <div id="cardThree" data-tilt></div>
+
+        <div id="cardOne" data-tilt>
+            <img src="asserts/images/two-white-dice-removebg-preview.png" alt="">
+            <!--<h1 id="numberTwo">2</h1>
+            <h1 id="twoPlayers">Players</h1>-->
+        </div>
+
+        <div id="cardTwo" data-tilt>
+            <img src="asserts/images/three-white-dice-removebg-preview.png" alt="">
+        </div>
+
+        <div id="cardThree" data-tilt>
+            <img src="asserts/images/four-white-dice.png" alt="">
+        </div>
     </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
