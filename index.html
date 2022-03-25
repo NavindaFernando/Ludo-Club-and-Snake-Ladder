@@ -174,6 +174,27 @@
             color: rgb(255, 255, 255);
         }
 
+        #main_container_one>img{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }
+
+        #main_container_two>img{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }
+
+        #main_container_three>img{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -207,6 +228,18 @@
                 explicabo fuga harum iure modi nam vel.</p>
         </div>
     </div>
+    
+    <div id="main_container_one">
+        <img id="bg1" src="asserts/images/manu%20bg2.jpg" alt="">
+    </div>
+
+    <div id="main_container_two">
+        <img id="bg2" src="asserts/images/manu%20bg2.jpg" alt="">
+    </div>
+
+    <div id="main_container_three">
+        <img id="bg3" src="asserts/images/manu%20bg2.jpg" alt="">
+    </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
 <script src="asserts/vanillaTilt/vanilla-tilt.js"></script>
@@ -215,6 +248,21 @@
     $(window).on('load',function () {
         console.log("Window Loaded");
         $("#splash_container").fadeOut(1000);
+    });
+
+    $("#cardOne").click(function () {
+        $("#manu_container").css("display","none");
+        $("#bg1").css("display","block");
+    });
+
+    $("#cardTwo").click(function () {
+        $("#manu_container").css("display","none");
+        $("#bg2").css("display","block");
+    });
+
+    $("#cardThree").click(function () {
+        $("#manu_container").css("display","none");
+        $("#bg3").css("display","block");
     });
 </script>
 
