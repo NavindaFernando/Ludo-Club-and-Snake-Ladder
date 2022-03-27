@@ -200,29 +200,8 @@
             transform: translateY(-2px);
             cursor: pointer;
         }
-
-        #main_container_one>img{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }
-
-        #main_container_two>img{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }
-
-        #main_container_three>img{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }
-
     </style>
+
 </head>
 <body>
 
@@ -235,6 +214,7 @@
         <img src="asserts/images/manu%20bg.jpg" alt="">
         <img id="soundIcon" src="asserts/images/sound%20icon.png" alt="">
         <img id="soundOffIcon" src="asserts/images/sound%20off%20icon.png" alt="">
+<!--        <img id="homeIcon" src="asserts/images/home%20icon.png" alt="">-->
 
         <div id="cardOne" data-tilt>
             <img src="asserts/images/two-white-dice-removebg-preview.png" alt="">
@@ -257,18 +237,6 @@
                 explicabo fuga harum iure modi nam vel.</p>
         </div>
     </div>
-    
-    <div id="main_container_one">
-        <img id="bg1" src="asserts/images/manu%20bg2.jpg" alt="">
-    </div>
-
-    <div id="main_container_two">
-        <img id="bg2" src="asserts/images/manu%20bg2.jpg" alt="">
-    </div>
-
-    <div id="main_container_three">
-        <img id="bg3" src="asserts/images/manu%20bg2.jpg" alt="">
-    </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
 <script src="asserts/vanillaTilt/vanilla-tilt.js"></script>
@@ -280,18 +248,15 @@
     });
 
     $("#cardOne").click(function () {
-        $("#manu_container").css("display","none");
-        $("#bg1").css("display","block");
+
     });
 
     $("#cardTwo").click(function () {
-        $("#manu_container").css("display","none");
-        $("#bg2").css("display","block");
+
     });
 
     $("#cardThree").click(function () {
-        $("#manu_container").css("display","none");
-        $("#bg3").css("display","block");
+
     });
 </script>
 
