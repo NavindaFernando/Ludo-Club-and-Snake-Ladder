@@ -46,7 +46,7 @@
             width: 90%;
             max-width: 200px;
             height: 200px;
-            color: white;
+            color: #ffffff;
             text-align: center;
             padding: 50px 35px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -150,7 +150,7 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        #cardOne>p{
+        #cardOne_para{
             position: relative;
             font-size: 13px;
             bottom: 340px;
@@ -200,8 +200,171 @@
             transform: translateY(-2px);
             cursor: pointer;
         }
-    </style>
 
+ /*        #main_container_one>img{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }
+
+        #main_container_two>img{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }
+
+        #main_container_three>img{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }*/
+
+ /*       #main_container_one_card{
+            width: 90%;
+            max-width: 500px;
+            height: 350px;
+            color: white;
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: none;
+        }
+
+        #main_container_one_para{
+            position: absolute;
+            font-size: 45px;
+            bottom: 320px;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            top: 0;
+            left: 0;
+            right: 0;
+        }*/
+
+ /*       #main_container_one_input{
+            position: absolute;
+            width: 300px;
+            height: 35px;
+            right: 100px;
+            top: 140px;
+            border-radius: 16px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.6);
+            outline: none;
+            border: none;
+            align-content: center;
+        }*/
+
+ /*        #homeIcon{
+            width: 30px;
+            position: absolute;
+            top: 35px;
+            left: 1300px;
+            opacity: 80%;
+            display: none;
+        }
+
+        #homeIcon:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }*/
+
+ /*       #avatarOne{
+            width: 100px;
+            position: absolute;
+            top: 125px;
+            left: 80px;
+            opacity: 80%;
+            display: none;
+        }
+
+        #avatarTwo{
+            width: 100px;
+            position: absolute;
+            top: 225px;
+            left: 80px;
+            opacity: 80%;
+            display: none;
+        }*/
+
+        #cardOne_inputOne{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 50px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        input::placeholder{
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        #cardOne_inputTwo{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 92px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardOne_paraTwo{
+            position: relative;
+            font-size: 13px;
+            top: 80px;
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+
+        #cardOne_a{
+            position: relative;
+            font-size: 22px;
+            top: 93px;
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+
+        #cardOne_a:hover{
+            cursor: pointer;
+            font-weight: bold;
+            transform: translateY(-2px);
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -217,10 +380,16 @@
 <!--        <img id="homeIcon" src="asserts/images/home%20icon.png" alt="">-->
 
         <div id="cardOne" data-tilt>
-            <img src="asserts/images/two-white-dice-removebg-preview.png" alt="">
+            <img id="cardOneImg" src="asserts/images/two-white-dice-removebg-preview.png" alt="">
             <h1 id="numberTwo">2 <br> Players</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
+            <p id="cardOne_para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
                 explicabo fuga harum iure modi nam vel.</p>
+            <input id="cardOne_inputOne" type="text" placeholder="first player name">
+            <input id="cardOne_inputTwo" type="text" placeholder="second player name">
+            <p id="cardOne_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
+                explicabo fuga harum iure modi nam vel.</p>
+            <a id="cardOne_a">Start</a>
+           <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
 
         <div id="cardTwo" data-tilt>
@@ -248,6 +417,16 @@
     });
 
     $("#cardOne").click(function () {
+        /*$("#manu_container").css("display","none");
+        $("#main_container_one_card").css("display","block");
+        $("#homeIcon").css("display","block");*/
+        $("#cardOne_para").css("display","none");
+        $("#cardOneImg").css("display","none");
+        $("#cardOne_paraTwo").css("display","block");
+        $("#numberTwo").css("display","none");
+        $("#cardOne_inputOne").css("display","block");
+        $("#cardOne_inputTwo").css("display","block");
+        $("#cardOne_a").css("display","block");
 
     });
 
