@@ -201,105 +201,7 @@
             cursor: pointer;
         }
 
- /*        #main_container_one>img{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }
-
-        #main_container_two>img{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }
-
-        #main_container_three>img{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: none;
-        }*/
-
- /*       #main_container_one_card{
-            width: 90%;
-            max-width: 500px;
-            height: 350px;
-            color: white;
-            text-align: center;
-            padding: 50px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            display: none;
-        }
-
-        #main_container_one_para{
-            position: absolute;
-            font-size: 45px;
-            bottom: 320px;
-            font-family: 'Jost', sans-serif;
-            font-family: 'Open Sans', sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            top: 0;
-            left: 0;
-            right: 0;
-        }*/
-
- /*       #main_container_one_input{
-            position: absolute;
-            width: 300px;
-            height: 35px;
-            right: 100px;
-            top: 140px;
-            border-radius: 16px;
-            align-content: center;
-            background-color: rgba(255, 255, 255, 0.6);
-            outline: none;
-            border: none;
-            align-content: center;
-        }*/
-
- /*        #homeIcon{
-            width: 30px;
-            position: absolute;
-            top: 35px;
-            left: 1300px;
-            opacity: 80%;
-            display: none;
-        }
-
-        #homeIcon:hover{
-            transform: translateY(-2px);
-            cursor: pointer;
-        }*/
-
- /*       #avatarOne{
-            width: 100px;
-            position: absolute;
-            top: 125px;
-            left: 80px;
-            opacity: 80%;
-            display: none;
-        }
-
-        #avatarTwo{
-            width: 100px;
-            position: absolute;
-            top: 225px;
-            left: 80px;
-            opacity: 80%;
-            display: none;
-        }*/
+        /*card 01*/
 
         #cardOne_inputOne{
             position: absolute;
@@ -342,7 +244,7 @@
         #cardOne_paraTwo{
             position: relative;
             font-size: 13px;
-            top: 80px;
+            top: 86px;
             font-family: 'Jost', sans-serif;
             color: rgb(255, 255, 255);
             display: none;
@@ -363,7 +265,79 @@
             transform: translateY(-2px);
         }
 
+        /*card 02*/
 
+        #cardTwo_inputOne{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 50px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardTwo_inputTwo{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 92px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardTwo_inputThree{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 134px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardTwo_paraTwo{
+            position: relative;
+            font-size: 13px;
+            top: 124px;
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+
+        #cardTwo_a{
+            position: relative;
+            font-size: 22px;
+            top: 123px;
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+
+        #cardTwo_a:hover{
+            cursor: pointer;
+            font-weight: bold;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -393,10 +367,16 @@
         </div>
 
         <div id="cardTwo" data-tilt>
-            <img src="asserts/images/three-white-dice-removebg-preview.png" alt="">
+            <img id="cardTwoImg" src="asserts/images/three-white-dice-removebg-preview.png" alt="">
             <h1 id="numberThree">3 <br> Players</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
+            <p id="cardTwo_para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
                 explicabo fuga harum iure modi nam vel.</p>
+            <input id="cardTwo_inputOne" type="text" placeholder="first player name">
+            <input id="cardTwo_inputTwo" type="text" placeholder="second player name">
+            <input id="cardTwo_inputThree" type="text" placeholder="third player name">
+            <p id="cardTwo_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod!</p>
+            <a id="cardTwo_a">Start</a>
+            <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
 
         <div id="cardThree" data-tilt>
@@ -427,11 +407,17 @@
         $("#cardOne_inputOne").css("display","block");
         $("#cardOne_inputTwo").css("display","block");
         $("#cardOne_a").css("display","block");
-
     });
 
     $("#cardTwo").click(function () {
-
+        $("#cardTwo_para").css("display","none");
+        $("#cardTwoImg").css("display","none");
+        $("#cardTwo_paraTwo").css("display","block");
+        $("#numberThree").css("display","none");
+        $("#cardTwo_inputOne").css("display","block");
+        $("#cardTwo_inputTwo").css("display","block");
+        $("#cardTwo_inputThree").css("display","block");
+        $("#cardTwo_a").css("display","block");
     });
 
     $("#cardThree").click(function () {
