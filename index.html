@@ -338,6 +338,96 @@
             font-weight: bold;
             transform: translateY(-2px);
         }
+
+        /*card 03*/
+
+        #cardThree_inputOne{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 50px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardThree_inputTwo{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 92px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardThree_inputThree{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 134px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+        #cardThree_inputFour{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            right: 0;
+            left: 0;
+            top: 176px;
+            margin: auto;
+            border-radius: 13px;
+            align-content: center;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            display: none;
+        }
+
+/*        #cardThree_paraTwo{
+            position: relative;
+            font-size: 13px;
+            top: 154px;
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            display: none;
+        }*/
+
+        #cardThree_a{
+            position: relative;
+            font-size: 22px;
+            top: 193px;
+            font-family: 'Jost', sans-serif;
+            color: rgb(255, 255, 255);
+            display: none;
+        }
+
+        #cardThree_a:hover{
+            cursor: pointer;
+            font-weight: bold;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -380,10 +470,19 @@
         </div>
 
         <div id="cardThree" data-tilt>
-            <img src="asserts/images/four-white-dice.png" alt="">
+            <img id="cardThreeImg" src="asserts/images/four-white-dice.png" alt="">
             <h1 id="numberFour">4 <br> Players</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
+            <p id="cardThree_para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
                 explicabo fuga harum iure modi nam vel.</p>
+            <div id="cardThree_inputs">
+                <input id="cardThree_inputOne" type="text" placeholder="first player name">
+                <input id="cardThree_inputTwo" type="text" placeholder="second player name">
+                <input id="cardThree_inputThree" type="text" placeholder="third player name">
+                <input id="cardThree_inputFour" type="text" placeholder="third player name">
+            </div>
+            <!--<p id="cardThree_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+            <a id="cardThree_a">Start</a>
+            <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
     </div>
 
@@ -421,7 +520,15 @@
     });
 
     $("#cardThree").click(function () {
-
+        $("#cardThree_para").css("display","none");
+        $("#cardThreeImg").css("display","none");
+        $("#cardThree_paraTwo").css("display","block");
+        $("#numberFour").css("display","none");
+        $("#cardThree_inputOne").css("display","block");
+        $("#cardThree_inputTwo").css("display","block");
+        $("#cardThree_inputThree").css("display","block");
+        $("#cardThree_inputFour").css("display","block");
+        $("#cardThree_a").css("display","block");
     });
 </script>
 
