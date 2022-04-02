@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="asserts/css%20normalize/normalize.css">
     <link rel="icon" href="asserts/images/ludoo%20icon.png">
     <style>
+
         #splash_container{
             width: 100vw;
             height: 100vh;
@@ -244,7 +245,7 @@
         #cardOne_paraTwo{
             position: relative;
             font-size: 13px;
-            top: 86px;
+            top: 93px;
             font-family: 'Jost', sans-serif;
             color: rgb(255, 255, 255);
             display: none;
@@ -252,10 +253,12 @@
 
         #cardOne_a{
             position: relative;
-            font-size: 22px;
+            font-size: 18px;
             top: 93px;
             font-family: 'Jost', sans-serif;
-            color: rgb(255, 255, 255);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: lighter;
+            color: rgba(255, 255, 255, 0.55);
             display: none;
         }
 
@@ -263,6 +266,7 @@
             cursor: pointer;
             font-weight: bold;
             transform: translateY(-2px);
+            color: white;
         }
 
         /*card 02*/
@@ -318,7 +322,7 @@
         #cardTwo_paraTwo{
             position: relative;
             font-size: 13px;
-            top: 124px;
+            top: 132px;
             font-family: 'Jost', sans-serif;
             color: rgb(255, 255, 255);
             display: none;
@@ -326,16 +330,19 @@
 
         #cardTwo_a{
             position: relative;
-            font-size: 22px;
-            top: 123px;
+            font-size: 18px;
+            top: 133px;
             font-family: 'Jost', sans-serif;
-            color: rgb(255, 255, 255);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: lighter;
+            color: rgba(255, 255, 255, 0.55);
             display: none;
         }
 
         #cardTwo_a:hover{
             cursor: pointer;
             font-weight: bold;
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -405,29 +412,33 @@
             display: none;
         }
 
-/*        #cardThree_paraTwo{
+        #cardThree_paraTwo{
             position: relative;
             font-size: 13px;
-            top: 154px;
+            top: 175px;
             font-family: 'Jost', sans-serif;
             color: rgb(255, 255, 255);
             display: none;
-        }*/
+        }
 
         #cardThree_a{
             position: relative;
-            font-size: 22px;
-            top: 193px;
+            font-size: 18px;
+            top: 176px;
             font-family: 'Jost', sans-serif;
-            color: rgb(255, 255, 255);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: lighter;
+            color: rgba(255, 255, 255, 0.55);
             display: none;
         }
 
         #cardThree_a:hover{
+            color: white;
             cursor: pointer;
             font-weight: bold;
             transform: translateY(-2px);
         }
+
     </style>
 </head>
 <body>
@@ -450,9 +461,8 @@
                 explicabo fuga harum iure modi nam vel.</p>
             <input id="cardOne_inputOne" type="text" placeholder="first player name">
             <input id="cardOne_inputTwo" type="text" placeholder="second player name">
-            <p id="cardOne_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
-                explicabo fuga harum iure modi nam vel.</p>
             <a id="cardOne_a">Start</a>
+            <p id="cardOne_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod!</p>
            <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
 
@@ -464,26 +474,126 @@
             <input id="cardTwo_inputOne" type="text" placeholder="first player name">
             <input id="cardTwo_inputTwo" type="text" placeholder="second player name">
             <input id="cardTwo_inputThree" type="text" placeholder="third player name">
-            <p id="cardTwo_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod!</p>
             <a id="cardTwo_a">Start</a>
+            <p id="cardTwo_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
 
         <div id="cardThree" data-tilt>
             <img id="cardThreeImg" src="asserts/images/four-white-dice.png" alt="">
             <h1 id="numberFour">4 <br> Players</h1>
-            <p id="cardThree_para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
+            <p id="cardThree_para">Lorem ipsum dolor sit amet! consectetur adipisicing elit. Culpa eveniet quasi quod! Commodi cupiditate et
                 explicabo fuga harum iure modi nam vel.</p>
-            <div id="cardThree_inputs">
                 <input id="cardThree_inputOne" type="text" placeholder="first player name">
                 <input id="cardThree_inputTwo" type="text" placeholder="second player name">
                 <input id="cardThree_inputThree" type="text" placeholder="third player name">
                 <input id="cardThree_inputFour" type="text" placeholder="third player name">
-            </div>
-            <!--<p id="cardThree_paraTwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
             <a id="cardThree_a">Start</a>
+            <p id="cardThree_paraTwo">Lorem ipsum dolor sit amet!</p>
             <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
+
+        <section id="ludoBoard">
+            <div id="red">
+
+            </div>
+
+            <div id="green">
+
+            </div>
+
+            <div id="blue">
+
+            </div>
+
+            <div id="yellow">
+
+            </div>
+
+            <div id="emptyBoxesTop">
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,255,0,0.4); box-shadow: 2px 2px 62px 4px yellow;"></div>
+                <div class="gridItems" style="background-color: rgba(255,255,0,0.4)"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,255,0,0.4); box-shadow: 2px 2px 62px 4px yellow;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,255,0,0.4); box-shadow: 2px 2px 62px 4px yellow;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,255,0,0.4); box-shadow: 2px 2px 62px 4px yellow;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,255,0,0.4); box-shadow: 2px 2px 62px 4px yellow;"></div>
+                <div class="gridItems"></div>
+            </div>
+
+            <div id="emptyBoxesBottom">
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,0,0,0.4); box-shadow: 2px 2px 62px 4px red;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,0,0,0.4); box-shadow: 2px 2px 62px 4px red;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,0,0,0.4); box-shadow: 2px 2px 62px 4px red;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,0,0,0.4); box-shadow: 2px 2px 62px 4px red;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(255,0,0,0.4)"></div>
+                <div class="gridItems" style="background-color: rgba(255,0,0,0.4); box-shadow: 2px 2px 62px 4px red;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+            </div>
+
+            <div id="emptyBoxesLeft">
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(0,255,114,0.5); box-shadow: 2px 2px 62px 4px limegreen;"></div>
+                <div class="gridItems" style="background-color: rgba(0,255,114,0.5); box-shadow: 2px 2px 62px 4px limegreen;"></div>
+                <div class="gridItems" style="background-color: rgba(0,255,114,0.5); box-shadow: 2px 2px 62px 4px limegreen;"></div>
+                <div class="gridItems" style="background-color: rgba(0,255,114,0.5); box-shadow: 2px 2px 62px 4px limegreen;"></div>
+                <div class="gridItems" style="background-color: rgba(0,255,114,0.5); box-shadow: 2px 2px 62px 4px limegreen;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(0,255,114,0.5)"></div>
+                <div class="gridItems"></div>
+            </div>
+
+            <div id="emptyBoxesRight">
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(64,155,255,0.5)"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems" style="background-color: rgba(64,155,255,0.5); box-shadow: 2px 2px 62px 4px dodgerblue;"></div>
+                <div class="gridItems" style="background-color: rgba(64,155,255,0.5); box-shadow: 2px 2px 62px 4px dodgerblue;"></div>
+                <div class="gridItems" style="background-color: rgba(64,155,255,0.5); box-shadow: 2px 2px 62px 4px dodgerblue;"></div>
+                <div class="gridItems" style="background-color: rgba(64,155,255,0.5); box-shadow: 2px 2px 62px 4px dodgerblue;"></div>
+                <div class="gridItems" style="background-color: rgba(64,155,255,0.5); box-shadow: 2px 2px 62px 4px dodgerblue;"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+            </div>
+        </section>
     </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
@@ -496,39 +606,50 @@
     });
 
     $("#cardOne").click(function () {
-        /*$("#manu_container").css("display","none");
-        $("#main_container_one_card").css("display","block");
-        $("#homeIcon").css("display","block");*/
         $("#cardOne_para").css("display","none");
         $("#cardOneImg").css("display","none");
-        $("#cardOne_paraTwo").css("display","block");
         $("#numberTwo").css("display","none");
         $("#cardOne_inputOne").css("display","block");
         $("#cardOne_inputTwo").css("display","block");
+        $("#cardOne_paraTwo").css("display","block");
         $("#cardOne_a").css("display","block");
     });
 
     $("#cardTwo").click(function () {
         $("#cardTwo_para").css("display","none");
         $("#cardTwoImg").css("display","none");
-        $("#cardTwo_paraTwo").css("display","block");
         $("#numberThree").css("display","none");
         $("#cardTwo_inputOne").css("display","block");
         $("#cardTwo_inputTwo").css("display","block");
         $("#cardTwo_inputThree").css("display","block");
+        $("#cardTwo_paraTwo").css("display","block");
         $("#cardTwo_a").css("display","block");
     });
 
     $("#cardThree").click(function () {
         $("#cardThree_para").css("display","none");
         $("#cardThreeImg").css("display","none");
-        $("#cardThree_paraTwo").css("display","block");
         $("#numberFour").css("display","none");
         $("#cardThree_inputOne").css("display","block");
         $("#cardThree_inputTwo").css("display","block");
         $("#cardThree_inputThree").css("display","block");
         $("#cardThree_inputFour").css("display","block");
+        $("#cardThree_paraTwo").css("display","block");
         $("#cardThree_a").css("display","block");
+    });
+
+    $("#soundIcon").click(function () {
+        $("#soundOffIcon").css("display","block");
+        $("#soundIcon").css("display","none");
+    });
+
+    $("#soundOffIcon").click(function () {
+        $("#soundOffIcon").css("display","none");
+        $("#soundIcon").css("display","block");
+    });
+
+    $("#cardOne_a").click(function () {
+        $("#ludoBoard").css("display","block");
     });
 </script>
 
