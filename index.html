@@ -602,6 +602,55 @@
             backdrop-filter: blur(5px);
         }
 
+        #bFirstStoneBox{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 80px;
+            top: 25px;
+            margin: auto;
+
+        }
+
+        #bSecondStoneBox{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            /*background-color: dodgerblue;*/
+            left: 0;
+            right: 80px;
+            top: 25px;
+            margin: auto;
+        }
+
+        #bThirdStoneBox{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            /*background-color: dodgerblue;*/
+            left: 0;
+            right: 80px;
+            bottom: 25px;
+            margin: auto;
+        }
+
+        #bFourthStoneBox{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            /*background-color: dodgerblue;*/
+            right: 0;
+            left: 80px;
+            bottom: 25px;
+            margin: auto;
+        }
+
+
     </style>
 </head>
 <body>
@@ -745,7 +794,10 @@
             </div>
 
             <div id="blueBox" data-tilt>
-
+                <div id="bFirstStoneBox" style="background-color: rgba(64,155,255,0.5)"></div>
+                <div id="bSecondStoneBox" style="background-color: rgba(64,155,255,0.5)"></div>
+                <div id="bThirdStoneBox" style="background-color: rgba(64,155,255,0.5)"></div>
+                <div id="bFourthStoneBox" style="background-color: rgba(64,155,255,0.5)"></div>
             </div>
 
             <div id="yellowBox" data-tilt>
@@ -817,6 +869,10 @@
 
     $("#cardOne_a").click(function () {
         $("#ludoBoard").css("display","block");
+        $("#cardOne").css("display","none");
+        $("#cardTwo").css("display","none");
+        $("#cardThree").css("display","none");
+
     });
 </script>
 
