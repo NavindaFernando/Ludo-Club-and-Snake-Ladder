@@ -819,22 +819,37 @@
             background-size: cover;
         }
 
+        /*red stone boxes & stones*/
         #rFirstStoneBox{
             position: absolute;
-            width: 43px;
-            height: 43px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             right: 0;
             left: 80px;
             top: 25px;
             margin: auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #rFirstStone{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/redStone.png");
+            background-size: cover;
         }
 
         #rSecondStoneBox{
             position: absolute;
-            width: 43px;
-            height: 43px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             /*background-color: dodgerblue;*/
             left: 0;
@@ -844,10 +859,24 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        #rThirdStoneBox{
+        #rSecondStone{
             position: absolute;
             width: 43px;
             height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/redStone.png");
+            background-size: cover;
+        }
+
+        #rThirdStoneBox{
+            position: absolute;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             /*background-color: dodgerblue;*/
             left: 0;
@@ -857,10 +886,24 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        #rFourthStoneBox{
+        #rThirdStone{
             position: absolute;
             width: 43px;
             height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/redStone.png");
+            background-size: cover;
+        }
+
+        #rFourthStoneBox{
+            position: absolute;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             /*background-color: dodgerblue;*/
             right: 0;
@@ -870,10 +913,24 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        #gFirstStoneBox{
+        #rFourthStone{
             position: absolute;
             width: 43px;
             height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/redStone.png");
+            background-size: cover;
+        }
+
+        #gFirstStoneBox{
+            position: absolute;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             right: 0;
             left: 80px;
@@ -884,8 +941,8 @@
 
         #gSecondStoneBox{
             position: absolute;
-            width: 43px;
-            height: 43px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             /*background-color: dodgerblue;*/
             left: 0;
@@ -897,8 +954,8 @@
 
         #gThirdStoneBox{
             position: absolute;
-            width: 43px;
-            height: 43px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             /*background-color: dodgerblue;*/
             left: 0;
@@ -910,8 +967,8 @@
 
         #gFourthStoneBox{
             position: absolute;
-            width: 43px;
-            height: 43px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             /*background-color: dodgerblue;*/
             right: 0;
@@ -1094,10 +1151,18 @@
             </div>
 
             <div id="redBox" data-tilt>
-                <div id="rFirstStoneBox" style="box-shadow: 2px 2px 150px 2px red;"></div>
-                <div id="rSecondStoneBox" style="box-shadow: 2px 2px 150px 2px red;"></div>
-                <div id="rThirdStoneBox" style="box-shadow: 2px 2px 150px 2px red;"></div>
-                <div id="rFourthStoneBox" style="box-shadow: 2px 2px 150px 2px red;"></div>
+                <div id="rFirstStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
+                    <div id="rFirstStone"></div>
+                </div>
+                <div id="rSecondStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
+                    <div id="rSecondStone"></div>
+                </div>
+                <div id="rThirdStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
+                    <div id="rThirdStone"></div>
+                </div>
+                <div id="rFourthStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
+                    <div id="rFourthStone"></div>
+                </div>
             </div>
 
             <div id="greenBox" data-tilt>
