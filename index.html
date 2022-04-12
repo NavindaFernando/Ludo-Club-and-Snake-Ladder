@@ -927,6 +927,7 @@
             background-size: cover;
         }
 
+        /*green stone boxes & stones*/
         #gFirstStoneBox{
             position: absolute;
             width: 45px;
@@ -937,6 +938,20 @@
             top: 25px;
             margin: auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #gFirstStone{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/greenStone.png");
+            background-size: cover;
         }
 
         #gSecondStoneBox{
@@ -952,6 +967,20 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        #gSecondStone{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/greenStone.png");
+            background-size: cover;
+        }
+
         #gThirdStoneBox{
             position: absolute;
             width: 45px;
@@ -965,6 +994,20 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        #gThirdStone{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/greenStone.png");
+            background-size: cover;
+        }
+
         #gFourthStoneBox{
             position: absolute;
             width: 45px;
@@ -976,6 +1019,20 @@
             bottom: 25px;
             margin: auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #gFourthStone{
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            border-radius: 5px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-image: url("asserts/images/greenStone.png");
+            background-size: cover;
         }
 
     </style>
@@ -1166,10 +1223,18 @@
             </div>
 
             <div id="greenBox" data-tilt>
-                <div id="gFirstStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;"></div>
-                <div id="gSecondStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;"></div>
-                <div id="gThirdStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;"></div>
-                <div id="gFourthStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;"></div>
+                <div id="gFirstStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;">
+                    <div id="gFirstStone"></div>
+                </div>
+                <div id="gSecondStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;">
+                    <div id="gSecondStone"></div>
+                </div>
+                <div id="gThirdStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;">
+                    <div id="gThirdStone"></div>
+                </div>
+                <div id="gFourthStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;">
+                    <div id="gFourthStone"></div>
+                </div>
             </div>
 
         </section>
