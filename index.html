@@ -10,6 +10,7 @@
     <link rel="icon" href="asserts/images/ludoo%20icon.png">
     <style>
 
+        /*splash screen*/
         #splash_container{
             width: 100vw;
             height: 100vh;
@@ -37,12 +38,14 @@
             right: 0;
         }
 
+        /*manu screen*/
         #manu_container>img:nth-child(1){
             position: absolute;
             width: 100vw;
             height: 100vh;
         }
 
+        /*cards*/
         #cardOne {
             width: 90%;
             max-width: 200px;
@@ -175,6 +178,7 @@
             color: rgb(255, 255, 255);
         }
 
+        /*sound icons*/
         #soundIcon{
             width: 28px;
             position: absolute;
@@ -203,7 +207,6 @@
         }
 
         /*card 01*/
-
         #cardOne_inputOne{
             position: absolute;
             width: 150px;
@@ -270,7 +273,6 @@
         }
 
         /*card 02*/
-
         #cardTwo_inputOne{
             position: absolute;
             width: 150px;
@@ -347,7 +349,6 @@
         }
 
         /*card 03*/
-
         #cardThree_inputOne{
             position: absolute;
             width: 150px;
@@ -453,6 +454,7 @@
             margin: auto;
         }
 
+        /*empty boxes*/
         #emptyBoxesTop{
             position: absolute;
             width: 144px;
@@ -521,6 +523,7 @@
             padding: 20px;
         }
 
+        /*winner box*/
         #winnerBox{
             position: absolute;
             width: 138px;
@@ -535,6 +538,7 @@
             margin: auto;
         }
 
+        /*main color boxes*/
         #blueBox{
             position: absolute;
             width: 196px;
@@ -1035,21 +1039,115 @@
             background-size: cover;
         }
 
+        /*blue person detail boxes*/
+        #bDetailBox{
+            position: absolute;
+            width: 96px;
+            height: 106px;
+            border-radius: 5px;
+            top: 52px;
+            right: 670px;
+            margin: auto;
+
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        #avatarBox{
+            position: absolute;
+            width: 76px;
+            height: 66px;
+            border-radius: 5px;
+            top: 8px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #132D4E;
+        }
+
+        #avatarOne{
+            position: absolute;
+            width: 60px;
+            top: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #avatarOneName{
+            position: absolute;
+            width: max-content;
+            top: 83px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            font-weight: lighter;
+        }
+
+        #avatarOneName:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        #bStoneDatailBox{
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border-radius: 5px;
+            top: 113px;
+            left: 43px;
+            margin: auto;
+
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        #bStone{
+            position: absolute;
+            width: 34px;
+            top: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 80%;
+        }
+
+        #bStone:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+
     </style>
 </head>
-<body>
 
+<body>
+<!--spash screen-->
     <div id="splash_container">
         <img src="asserts/images/ludoo%20logo.jpg" alt="">
         <img src="asserts/images/loader.gif" alt="">
     </div>
 
+<!--meny screen-->
     <div id="manu_container">
         <img src="asserts/images/manu%20bg.jpg" alt="">
         <img id="soundIcon" src="asserts/images/sound%20icon.png" alt="">
         <img id="soundOffIcon" src="asserts/images/sound%20off%20icon.png" alt="">
-<!--        <img id="homeIcon" src="asserts/images/home%20icon.png" alt="">-->
 
+<!--cards-->
         <div id="cardOne" data-tilt>
             <img id="cardOneImg" src="asserts/images/two-white-dice-removebg-preview.png" alt="">
             <h1 id="numberTwo">2 <br> Players</h1>
@@ -1089,10 +1187,13 @@
             <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
 
+<!--ludo board-->
         <section id="ludoBoard">
 
+<!--winner box-->
             <div id="winnerBox"></div>
 
+<!--empty boxes-->
             <div id="emptyBoxesTop">
                 <div class="gridItems"></div>
                 <div class="gridItems"></div>
@@ -1177,6 +1278,7 @@
                 <div class="gridItems"></div>
             </div>
 
+<!--blue box-->
             <div id="blueBox" data-tilt>
                 <div id="bFirstStoneBox" style="box-shadow: 2px 2px 150px 2px dodgerblue">
                     <div id="bFirstStone"></div>
@@ -1191,7 +1293,19 @@
                     <div id="bFourthStone"></div>
                 </div>
             </div>
+<!--blue detail box-->
+            <div id="bDetailBox">
+                <div id="avatarBox">
+                    <img id="avatarOne" src="asserts/images/avatarOne.png" alt="">
+                </div>
+                <p id="avatarOneName">navinda</p>
 
+                <div id="bStoneDatailBox">
+                    <img id="bStone" src="asserts/images/click%20icon.png" alt="">
+                </div>
+            </div>
+
+<!--yellow box-->
             <div id="yellowBox" data-tilt>
                 <div id="yFirstStoneBox" style="box-shadow: 2px 2px 150px 2px yellow;">
                     <div id="yFirstStone"></div>
@@ -1207,6 +1321,7 @@
                 </div>
             </div>
 
+<!--red box-->
             <div id="redBox" data-tilt>
                 <div id="rFirstStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
                     <div id="rFirstStone"></div>
@@ -1222,6 +1337,7 @@
                 </div>
             </div>
 
+<!--green box-->
             <div id="greenBox" data-tilt>
                 <div id="gFirstStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;">
                     <div id="gFirstStone"></div>
@@ -1236,6 +1352,14 @@
                     <div id="gFourthStone"></div>
                 </div>
             </div>
+
+<!--details boxes-->
+
+            <div id="yDetailBox"></div>
+
+            <div id="rDetailBox"></div>
+
+            <div id="gDetailBox"></div>
 
         </section>
     </div>
