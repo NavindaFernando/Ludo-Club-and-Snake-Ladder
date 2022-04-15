@@ -1055,7 +1055,7 @@
             backdrop-filter: blur(5px);
         }
 
-        #avatarBox{
+        #bAvatarBox{
             position: absolute;
             width: 76px;
             height: 66px;
@@ -1070,7 +1070,7 @@
             border: 1px solid #132D4E;
         }
 
-        #avatarOne{
+        #avatarBlue{
             position: absolute;
             width: 60px;
             top: 1px;
@@ -1080,7 +1080,7 @@
             margin: auto;
         }
 
-        #avatarOneName{
+        #avatarBlueName{
             position: absolute;
             width: max-content;
             top: 83px;
@@ -1094,12 +1094,12 @@
             font-weight: lighter;
         }
 
-        #avatarOneName:hover{
+        #avatarBlueName:hover{
             transform: translateY(-2px);
             cursor: pointer;
         }
 
-        #bStoneDatailBox{
+        #bDiceDatailBox{
             position: absolute;
             width: 52px;
             height: 52px;
@@ -1114,7 +1114,7 @@
             backdrop-filter: blur(5px);
         }
 
-        #bStone{
+        #bDice{
             position: absolute;
             width: 34px;
             top: 1px;
@@ -1125,11 +1125,101 @@
             opacity: 80%;
         }
 
-        #bStone:hover{
+        #bDice:hover{
             transform: translateY(-2px);
             cursor: pointer;
         }
 
+        /*yellow person detail boxes*/
+        #yDetailBox{
+            position: absolute;
+            width: 96px;
+            height: 106px;
+            border-radius: 5px;
+            top: 52px;
+            left: 670px;
+            margin: auto;
+
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        #yAvatarBox{
+            position: absolute;
+            width: 76px;
+            height: 66px;
+            border-radius: 5px;
+            top: 8px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #132D4E;
+        }
+
+        #avatarYellow{
+            position: absolute;
+            width: 60px;
+            top: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #avatarYellowName{
+            position: absolute;
+            width: max-content;
+            top: 83px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            font-weight: lighter;
+        }
+
+        #avatarYellowName:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        #yDiceDatailBox{
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border-radius: 5px;
+            top: 113px;
+            right: 43px;
+            margin: auto;
+
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        #yDice{
+            position: absolute;
+            width: 34px;
+            top: 1px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 80%;
+        }
+
+        #yDice:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
 
     </style>
 </head>
@@ -1295,13 +1385,13 @@
             </div>
 <!--blue detail box-->
             <div id="bDetailBox">
-                <div id="avatarBox">
-                    <img id="avatarOne" src="asserts/images/avatarOne.png" alt="">
+                <div id="bAvatarBox">
+                    <img id="avatarBlue" src="asserts/images/avatarOne.png" alt="">
                 </div>
-                <p id="avatarOneName">navinda</p>
+                <p id="avatarBlueName">navinda</p>
 
-                <div id="bStoneDatailBox">
-                    <img id="bStone" src="asserts/images/click%20icon.png" alt="">
+                <div id="bDiceDatailBox">
+                    <img id="bDice" src="asserts/images/click%20icon.png" alt="">
                 </div>
             </div>
 
@@ -1320,6 +1410,17 @@
                     <div id="yFourthStone"></div>
                 </div>
             </div>
+<!--yellow detail box-->
+            <div id="yDetailBox">
+                <div id="yAvatarBox">
+                    <img id="avatarYellow" src="asserts/images/avatarOne.png" alt="">
+                </div>
+                <p id="avatarYellowName">shamal</p>
+
+                <div id="yDiceDatailBox">
+                    <img id="yDice" src="asserts/images/click%20icon.png" alt="">
+                </div>
+            </div>
 
 <!--red box-->
             <div id="redBox" data-tilt>
@@ -1334,6 +1435,17 @@
                 </div>
                 <div id="rFourthStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
                     <div id="rFourthStone"></div>
+                </div>
+            </div>
+<!--red detail box-->
+            <div id="rDetailBox">
+                <div id="rAvatarBox">
+                    <img id="avatarRed" src="asserts/images/avatarOne.png" alt="">
+                </div>
+                <p id="avatarRedName">fernando</p>
+
+                <div id="rDiceDatailBox">
+                    <img id="rDice" src="asserts/images/click%20icon.png" alt="">
                 </div>
             </div>
 
@@ -1352,14 +1464,17 @@
                     <div id="gFourthStone"></div>
                 </div>
             </div>
+<!--green detail box-->
+            <div id="gDetailBox">
+                <div id="gAvatarBox">
+                    <img id="avatarGreen" src="asserts/images/avatarOne.png" alt="">
+                </div>
+                <p id="avatarGreenName">fernando</p>
 
-<!--details boxes-->
-
-            <div id="yDetailBox"></div>
-
-            <div id="rDetailBox"></div>
-
-            <div id="gDetailBox"></div>
+                <div id="gDiceDatailBox">
+                    <img id="gDice" src="asserts/images/click%20icon.png" alt="">
+                </div>
+            </div>
 
         </section>
     </div>
