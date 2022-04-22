@@ -183,8 +183,9 @@
             width: 28px;
             position: absolute;
             top: 35px;
-            left: 1300px;
+            right: 1300px;
             opacity: 80%;
+            display: none;
         }
 
         #soundIcon:hover{
@@ -1562,6 +1563,93 @@
             opacity: 30%;
         }
 
+        /*display blur*/
+        #displayNight{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: none;
+        }
+
+        #displayBlur{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: none;
+        }
+
+        /*sun icon*/
+        #sunIcon{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 648px;
+            left: 948px;
+            opacity: 80%;
+            background-image: url("asserts/images/sun.png");
+            background-size: cover;
+            display: none;
+        }
+
+        #sunIcon:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        /*night icon*/
+        #nightIcon{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 35px;
+            left: 1300px;
+            opacity: 80%;
+            background-image: url("asserts/images/night.png");
+            background-size: cover;
+            display: none;
+        }
+
+        #nightIcon:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        /*settings icon*/
+        #settingsIcon{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 35px;
+            right: 940px;
+            opacity: 70%;
+            background-image: url("asserts/images/settings.png");
+            background-size: cover;
+        }
+
+        #settingsIcon:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        /*home icon*/
+        #homeIcon{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 85px;
+            right: 940px;
+            opacity: 70%;
+            background-image: url("asserts/images/home icon.png");
+            background-size: cover;
+        }
+
+        #homeIcon:hover{
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
@@ -1578,6 +1666,7 @@
         <img src="asserts/images/manu%20bg.jpg" alt="">
         <img id="soundIcon" src="asserts/images/sound%20icon.png" alt="">
         <img id="soundOffIcon" src="asserts/images/sound%20off%20icon.png" alt="">
+        <img id="nightIcon" src="asserts/images/night.png" alt="">
 
 <!--cards-->
         <div id="cardOne" data-tilt>
@@ -1618,6 +1707,9 @@
             <p id="cardThree_paraTwo">Lorem ipsum dolor sit amet!</p>
             <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
         </div>
+
+<!--night mood-->
+        <div id="displayNight"></div>
 
 <!--ludo board-->
         <section id="ludoBoard">
@@ -1836,7 +1928,18 @@
             <div id="arrowThree"></div>
             <div id="arrowFour"></div>
 
+<!--icons-->
+            <div id="sunIcon"></div>
+            <div id="settingsIcon"></div>
+            <div id="homeIcon"></div>
+
         </section>
+
+<!--display blur-->
+        <div id="displayBlur"></div>
+
+<!--settings-->
+
     </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
@@ -1896,8 +1999,28 @@
         $("#cardOne").css("display","none");
         $("#cardTwo").css("display","none");
         $("#cardThree").css("display","none");
-
+        $("#nightIcon").css("display","block");
     });
+
+    $("#nightIcon").click(function () {
+        $("#displayNight").css("display","block");
+        $("#sunIcon").css("display","block");
+    });
+
+    $("#sunIcon").click(function () {
+        $("#displayNight").css("display","none");
+        $("#sunIcon").css("display","none");
+    });
+
+    $("#settingsIcon").click(function () {
+        $("#displayBlur").css("display","block");
+    });
+
+    $("#homeIcon").click(function () {
+        $("#displayBlur").css("display","block");
+    });
+
+
 </script>
 
 </body>
