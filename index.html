@@ -618,7 +618,6 @@
             top: 25px;
             margin: auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
-
         }
 
         #bFirstStone{
@@ -1576,7 +1575,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.75);
+            background-color: rgba(0, 0, 0, 0.80);
             display: none;
         }
 
@@ -1585,7 +1584,7 @@
             width: 30px;
             height: 30px;
             position: absolute;
-            bottom: 648px;
+            top: 35px;
             left: 948px;
             opacity: 80%;
             background-image: url("asserts/images/sun.png");
@@ -1604,7 +1603,7 @@
             height: 30px;
             position: absolute;
             top: 35px;
-            left: 1300px;
+            left: 948px;
             opacity: 80%;
             background-image: url("asserts/images/night.png");
             background-size: cover;
@@ -1650,6 +1649,135 @@
             cursor: pointer;
         }
 
+        /*home card*/
+        #homeCard{
+            width: 90%;
+            max-width: 500px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.2);*/
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: none;
+        }
+
+        #homeCard_para{
+            position: absolute;
+            font-size: 20px;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: lighter;
+            top: 80px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        #homeCard_yesBtn{
+            position: absolute;
+            width: 90px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            top: 155px;
+            bottom: 0;
+            left: 0;
+            right: 100px;
+            margin: auto;
+        }
+
+        #homeCard_yesBtn:hover{
+            background: rgba(50, 205, 50, 0.5);
+            box-shadow: 2px 2px 242px 4px limegreen;
+            border: 1px solid rgba(50, 205, 50, 0.53);
+            cursor: pointer;
+        }
+
+        #homeCard_yesPara{
+            position: relative;
+            font-size: 16px;
+            bottom: 0;
+            top: 12px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #homeCard_noBtn{
+            position: absolute;
+            width: 90px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            top: 155px;
+            bottom: 0;
+            right: 0;
+            left: 100px;
+            margin: auto;
+        }
+
+        #homeCard_noBtn:hover{
+            background: rgba(255, 0, 0, 0.5);
+            box-shadow: 2px 2px 242px 4px red;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        #homeCard_noPara{
+            position: relative;
+            font-size: 16px;
+            bottom: 0;
+            top: 12px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #cancelIcon{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-image: url("asserts/images/cancelIcon.png");
+            background-size: cover;
+            top: 0;
+            bottom: 238px;
+            left: 500px;
+            right: 0;
+            margin: auto;
+            opacity: 50%;
+            border-radius: 100%;
+        }
+
+        #cancelIcon:hover{
+            cursor: pointer;
+            box-shadow: 2px 2px 142px 4px white;
+        }
 
     </style>
 </head>
@@ -1666,7 +1794,6 @@
         <img src="asserts/images/manu%20bg.jpg" alt="">
         <img id="soundIcon" src="asserts/images/sound%20icon.png" alt="">
         <img id="soundOffIcon" src="asserts/images/sound%20off%20icon.png" alt="">
-        <img id="nightIcon" src="asserts/images/night.png" alt="">
 
 <!--cards-->
         <div id="cardOne" data-tilt>
@@ -1929,6 +2056,7 @@
             <div id="arrowFour"></div>
 
 <!--icons-->
+            <div id="nightIcon"></div>
             <div id="sunIcon"></div>
             <div id="settingsIcon"></div>
             <div id="homeIcon"></div>
@@ -1938,8 +2066,18 @@
 <!--display blur-->
         <div id="displayBlur"></div>
 
-<!--settings-->
-
+<!--home card-->
+        <div id="homeCard">
+            <p id="homeCard_para">Leaving a game ruins it for everyone and <br> you forfeit all potential rewards. You will
+                <br> also get an abandon in your statistics. <br> Are you sure you want to leave?</p>
+            <div id="homeCard_yesBtn">
+                <p id="homeCard_yesPara">Yes</p>
+            </div>
+            <div id="homeCard_noBtn">
+                <p id="homeCard_noPara">No</p>
+            </div>
+            <div id="cancelIcon"></div>
+        </div>
     </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
@@ -2005,11 +2143,13 @@
     $("#nightIcon").click(function () {
         $("#displayNight").css("display","block");
         $("#sunIcon").css("display","block");
+        $("#nightIcon").css("display","none");
     });
 
     $("#sunIcon").click(function () {
         $("#displayNight").css("display","none");
         $("#sunIcon").css("display","none");
+        $("#nightIcon").css("display","block");
     });
 
     $("#settingsIcon").click(function () {
@@ -2018,6 +2158,29 @@
 
     $("#homeIcon").click(function () {
         $("#displayBlur").css("display","block");
+        $("#homeCard").css("display","block");
+    });
+
+    $("#cancelIcon").click(function () {
+        $("#homeCard").css("display","none");
+        $("#displayBlur").css("display","none");
+    });
+
+    $("#homeCard_yesBtn").click(function () {
+        $("#homeCard").css("display","none");
+        $("#displayBlur").css("display","none");
+        $("#ludoBoard").css("display","none");
+        $("#nightIcon").css("display","none");
+        $("#cardOne").css("display","block");
+        $("#cardTwo").css("display","block");
+        $("#cardThree").css("display","block");
+        $("#displayNight").css("display","none");
+        $("#sunIcon").css("display","none");
+    });
+
+    $("#homeCard_noBtn").click(function () {
+        $("#homeCard").css("display","none");
+        $("#displayBlur").css("display","none");
     });
 
 
