@@ -1779,6 +1779,62 @@
             box-shadow: 2px 2px 142px 4px white;
         }
 
+        /*setings card*/
+        #settingsCard{
+            width: 90%;
+            max-width: 500px;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.2);*/
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: none;
+        }
+
+        #settingsCard_para{
+            position: absolute;
+            font-size: 25px;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: lighter;
+            top: 70px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        #cancelIconTwo{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-image: url("asserts/images/cancelIcon.png");
+            background-size: cover;
+            top: 0;
+            bottom: 238px;
+            left: 500px;
+            right: 0;
+            margin: auto;
+            opacity: 50%;
+            border-radius: 100%;
+        }
+
+        #cancelIconTwo:hover{
+            cursor: pointer;
+            box-shadow: 2px 2px 142px 4px white;
+        }
+
     </style>
 </head>
 
@@ -2078,6 +2134,13 @@
             </div>
             <div id="cancelIcon"></div>
         </div>
+
+<!--settings card-->
+        <div id="settingsCard">
+            <p id="settingsCard_para">Game Settings</p>
+            <div id="cancelIconTwo"></div>
+        </div>
+
     </div>
 
 <script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
@@ -2140,6 +2203,22 @@
         $("#nightIcon").css("display","block");
     });
 
+    $("#cardTwo_a").click(function () {
+        $("#ludoBoard").css("display","block");
+        $("#cardOne").css("display","none");
+        $("#cardTwo").css("display","none");
+        $("#cardThree").css("display","none");
+        $("#nightIcon").css("display","block");
+    });
+
+    $("#cardThree_a").click(function () {
+        $("#ludoBoard").css("display","block");
+        $("#cardOne").css("display","none");
+        $("#cardTwo").css("display","none");
+        $("#cardThree").css("display","none");
+        $("#nightIcon").css("display","block");
+    });
+
     $("#nightIcon").click(function () {
         $("#displayNight").css("display","block");
         $("#sunIcon").css("display","block");
@@ -2154,6 +2233,12 @@
 
     $("#settingsIcon").click(function () {
         $("#displayBlur").css("display","block");
+        $("#settingsCard").css("display","block");
+    });
+
+    $("#cancelIconTwo").click(function () {
+        $("#settingsCard").css("display","none");
+        $("#displayBlur").css("display","none");
     });
 
     $("#homeIcon").click(function () {
