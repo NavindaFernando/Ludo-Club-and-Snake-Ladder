@@ -203,6 +203,17 @@
         background-color: white;
     }
 
+    #cardOne_inputOne:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    @keyframes shake {
+        25% { transform: translateX(4px); }
+        50% { transform: translateX(-4px); }
+        75% { transform: translateX(4px); }
+    }
+
     input::placeholder{
         font-family: 'Jost', sans-serif;
         color: rgb(255, 255, 255);
@@ -225,6 +236,11 @@
         display: none;
         color: white;
         font-family: 'Jost', sans-serif;
+    }
+
+    #cardOne_inputTwo:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
     }
 
     #cardOne_paraTwo{
@@ -273,6 +289,11 @@
         font-family: 'Jost', sans-serif;
     }
 
+    #cardTwo_inputOne:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
     #cardTwo_inputTwo{
         position: absolute;
         width: 150px;
@@ -291,6 +312,11 @@
         font-family: 'Jost', sans-serif;
     }
 
+    #cardTwo_inputTwo:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
     #cardTwo_inputThree{
         position: absolute;
         width: 150px;
@@ -307,6 +333,11 @@
         display: none;
         color: white;
         font-family: 'Jost', sans-serif;
+    }
+
+    #cardTwo_inputThree:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
     }
 
     #cardTwo_paraTwo{
@@ -355,6 +386,11 @@
         font-family: 'Jost', sans-serif;
     }
 
+    #cardThree_inputOne:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
     #cardThree_inputTwo{
         position: absolute;
         width: 150px;
@@ -371,6 +407,11 @@
         display: none;
         color: white;
         font-family: 'Jost', sans-serif;
+    }
+
+    #cardThree_inputTwo:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
     }
 
     #cardThree_inputThree{
@@ -391,6 +432,11 @@
         font-family: 'Jost', sans-serif;
     }
 
+    #cardThree_inputThree:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
     #cardThree_inputFour{
         position: absolute;
         width: 150px;
@@ -407,6 +453,11 @@
         display: none;
         color: white;
         font-family: 'Jost', sans-serif;
+    }
+
+    #cardThree_inputFour:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
     }
 
     #cardThree_paraTwo{
@@ -2508,8 +2559,8 @@
             <h1 id="numberTwo">2 <br> Players</h1>
             <p id="cardOne_para">This ludo board is suitable <br> for two players. Play ludo with one <br> of your favorite players
                  and have fun. <br> Congratulations!</p>
-            <input id="cardOne_inputOne" type="text" placeholder="blue player name">
-            <input id="cardOne_inputTwo" type="text" placeholder="green player name">
+            <input id="cardOne_inputOne" type="text" placeholder="blue player name" pattern="[a-z]*">
+            <input id="cardOne_inputTwo" type="text" placeholder="green player name" pattern="[a-z]*">
             <a id="cardOne_a">Start</a>
             <p id="cardOne_paraTwo">Enter the names of the three players!</p>
            <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
@@ -2520,9 +2571,9 @@
             <h1 id="numberThree">3 <br> Players</h1>
             <p id="cardTwo_para">This ludo board is suitable <br> for three players. Play ludo with two <br> of your favorite players
                 and have fun. <br> Congratulations!</p>
-            <input id="cardTwo_inputOne" type="text" placeholder="blue player name">
-            <input id="cardTwo_inputTwo" type="text" placeholder="yellow player name">
-            <input id="cardTwo_inputThree" type="text" placeholder="green player name">
+            <input id="cardTwo_inputOne" type="text" placeholder="blue player name" pattern="[a-z]*">
+            <input id="cardTwo_inputTwo" type="text" placeholder="yellow player name" pattern="[a-z]*">
+            <input id="cardTwo_inputThree" type="text" placeholder="green player name" pattern="[a-z]*">
             <a id="cardTwo_a">Start</a>
             <p id="cardTwo_paraTwo">Enter the names of the three players!</p>
             <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
@@ -2533,10 +2584,10 @@
             <h1 id="numberFour">4 <br> Players</h1>
             <p id="cardThree_para">This ludo board is suitable <br> for four players. Play ludo with three <br> of your favorite players
                 and have fun. <br> Congratulations!</p>
-                <input id="cardThree_inputOne" type="text" placeholder="blue player name">
-                <input id="cardThree_inputTwo" type="text" placeholder="yellow player name">
-                <input id="cardThree_inputThree" type="text" placeholder="red player name">
-                <input id="cardThree_inputFour" type="text" placeholder="green player name">
+                <input id="cardThree_inputOne" type="text" placeholder="blue player name" pattern="[a-z]*">
+                <input id="cardThree_inputTwo" type="text" placeholder="yellow player name" pattern="[a-z]*">
+                <input id="cardThree_inputThree" type="text" placeholder="red player name" pattern="[a-z]*">
+                <input id="cardThree_inputFour" type="text" placeholder="green player name" pattern="[a-z]*">
             <a id="cardThree_a">Start</a>
             <p id="cardThree_paraTwo">Enter the names of the four players!</p>
             <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
