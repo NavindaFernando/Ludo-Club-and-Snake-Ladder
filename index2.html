@@ -1,0 +1,2765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake $ Ladder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asserts/css%20normalize/normalize.css">
+    <link rel="icon" href="asserts/images/snack_game_logo.png">
+    <link rel="stylesheet" href="asserts/jQuery/jquery-ui.min.css">
+</head>
+<style>
+
+    /*splash screen*/
+    #splash_container{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background: white;
+    }
+
+    #splash_container>img:nth-child(1){
+        width: 800px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    #splash_container>img:nth-child(2){
+        width: 110px;
+        position: absolute;
+        margin: auto;
+        left: 40px;
+        top: 100px;
+        bottom: 0;
+        right: 0;
+    }
+
+    /*manu screen*/
+    #manu_container>img:nth-child(1){
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    /*cards*/
+    #cardOne {
+        width: 90%;
+        max-width: 200px;
+        height: 200px;
+        color: #ffffff;
+        text-align: center;
+        padding: 50px 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /*background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 60%;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    #cardTwo {
+        width: 90%;
+        max-width: 200px;
+        height: 200px;
+        color: white;
+        text-align: center;
+        padding: 50px 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /*background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    #cardThree {
+        width: 90%;
+        max-width: 200px;
+        height: 200px;
+        color: white;
+        text-align: center;
+        padding: 50px 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /*background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 60%;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    #cardOne>img{
+        position: relative;
+        top: 100px;
+        width: 250px;
+        opacity: 90%;
+    }
+
+    #cardTwo>img{
+        position: relative;
+        top: 100px;
+        width: 250px;
+        opacity: 90%;
+    }
+
+    #cardThree>img{
+        position: relative;
+        top: 100px;
+        width: 250px;
+        opacity: 90%;
+    }
+
+    #numberTwo {
+        position: relative;
+        font-size: 45px;
+        bottom: 320px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #numberThree {
+        position: relative;
+        font-size: 45px;
+        bottom: 320px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #numberFour {
+        position: relative;
+        font-size: 45px;
+        bottom: 320px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #cardOne_para{
+        position: relative;
+        font-size: 13px;
+        bottom: 335px;
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+    }
+
+    #cardTwo>p{
+        position: relative;
+        font-size: 13px;
+        bottom: 335px;
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+    }
+
+    #cardThree>p{
+        position: relative;
+        font-size: 13px;
+        bottom: 335px;
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+    }
+
+    /*card 01*/
+    #cardOne_inputOne{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 50px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardOne_inputOne animate{
+        background-color: white;
+    }
+
+    #cardOne_inputOne:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    @keyframes shake {
+        25% { transform: translateX(4px); }
+        50% { transform: translateX(-4px); }
+        75% { transform: translateX(4px); }
+    }
+
+    input::placeholder{
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+
+    #cardOne_inputTwo{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 92px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardOne_inputTwo:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardOne_paraTwo{
+        position: relative;
+        font-size: 13px;
+        top: 175px;
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+        display: none;
+    }
+
+    #cardOne_a{
+        position: relative;
+        font-size: 18px;
+        top: 93px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: lighter;
+        color: rgba(255, 255, 255, 0.55);
+        display: none;
+    }
+
+    #cardOne_a:hover{
+        cursor: pointer;
+        font-weight: bold;
+        transform: translateY(-2px);
+        color: white;
+    }
+
+    /*card 02*/
+    #cardTwo_inputOne{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 50px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardTwo_inputOne:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardTwo_inputTwo{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 92px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardTwo_inputTwo:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardTwo_inputThree{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 134px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardTwo_inputThree:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardTwo_paraTwo{
+        position: relative;
+        font-size: 13px;
+        top: 175px;
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+        display: none;
+    }
+
+    #cardTwo_a{
+        position: relative;
+        font-size: 18px;
+        top: 133px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: lighter;
+        color: rgba(255, 255, 255, 0.55);
+        display: none;
+    }
+
+    #cardTwo_a:hover{
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /*card 03*/
+    #cardThree_inputOne{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 50px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardThree_inputOne:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardThree_inputTwo{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 92px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardThree_inputTwo:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardThree_inputThree{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 134px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardThree_inputThree:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardThree_inputFour{
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        right: 0;
+        left: 0;
+        top: 176px;
+        margin: auto;
+        border-radius: 13px;
+        align-content: center;
+        background-color: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        display: none;
+        color: white;
+        font-family: 'Jost', sans-serif;
+    }
+
+    #cardThree_inputFour:invalid{
+        animation: shake 300ms;
+        border-color: #ff3a3a;
+    }
+
+    #cardThree_paraTwo{
+        position: relative;
+        font-size: 13px;
+        top: 175px;
+        font-family: 'Jost', sans-serif;
+        color: rgb(255, 255, 255);
+        display: none;
+    }
+
+    #cardThree_a{
+        position: relative;
+        font-size: 18px;
+        top: 176px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: lighter;
+        color: rgba(255, 255, 255, 0.55);
+        display: none;
+    }
+
+    #cardThree_a:hover{
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transform: translateY(-2px);
+    }
+
+    /*ludo board*/
+    #ludoBoard{
+        position: fixed;
+        /*border: 1px solid red;*/
+        width: 660px;
+        height: 660px;
+        display: none;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    /*empty boxes*/
+    #emptyBoxesTop{
+        position: absolute;
+        width: 614px;
+        height: 540px;
+        /*border: 2px solid red;*/
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+        padding: 50px;
+    }
+
+    .gridItems {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #132D4E;
+        border-radius: 5px;
+        padding: 20px;
+        position: relative;
+        right: 28px;
+        opacity: 50%;
+    }
+
+    /*blue stone boxes & stones*/
+    #bFirstStoneBox{
+        position: absolute;
+        width: 52px;
+        height: 50px;
+        border-radius: 5px;
+        right: 0;
+        left: 943px;
+        top: 110px;
+        margin: auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #bFirstStone{
+        position: absolute;
+        width: 43px;
+        height: 43px;
+        border-radius: 5px;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url("asserts/images/blueStone.png");
+        background-size: cover;
+    }
+
+    /*yellow stone boxes & stones*/
+    #yFirstStoneBox{
+        position: absolute;
+        width: 52px;
+        height: 50px;
+        border-radius: 5px;
+        right: 0;
+        left: 943px;
+        top: 240px;
+        margin: auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #yFirstStone{
+        position: absolute;
+        width: 43px;
+        height: 43px;
+        border-radius: 5px;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url("asserts/images/yellowStone.png");
+        background-size: cover;
+    }
+
+    /*red stone boxes & stones*/
+    #rFirstStoneBox{
+        position: absolute;
+        width: 52px;
+        height: 50px;
+        border-radius: 5px;
+        right: 0;
+        left: 943px;
+        top: 370px;
+        margin: auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #rFirstStone{
+        position: absolute;
+        width: 43px;
+        height: 43px;
+        border-radius: 5px;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url("asserts/images/redStone.png");
+        background-size: cover;
+    }
+
+    /*green stone boxes & stones*/
+    #gFirstStoneBox{
+        position: absolute;
+        width: 52px;
+        height: 50px;
+        border-radius: 5px;
+        right: 0;
+        left: 943px;
+        top: 502px;
+        margin: auto;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #gFirstStone{
+        position: absolute;
+        width: 43px;
+        height: 43px;
+        border-radius: 5px;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url("asserts/images/greenStone.png");
+        background-size: cover;
+    }
+
+    /*blue person detail boxes*/
+    #bDetailBox{
+        position: absolute;
+        width: 96px;
+        height: 106px;
+        border-radius: 5px;
+        top: 52px;
+        left: 830px;
+        margin: auto;
+
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    #bAvatarBox{
+        position: absolute;
+        width: 76px;
+        height: 66px;
+        border-radius: 5px;
+        top: 8px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #132D4E;
+    }
+
+    #avatarBlue{
+        position: absolute;
+        width: 60px;
+        top: 1px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #avatarBlueName{
+        position: absolute;
+        width: max-content;
+        top: 83px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        font-weight: lighter;
+    }
+
+    #avatarBlueName:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    #bDiceDatailBox{
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        border-radius: 5px;
+        top: 223px;
+        right: 168px;
+        margin: auto;
+
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    #bDice{
+        position: absolute;
+        width: 34px;
+        top: 1px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 80%;
+    }
+
+    #bDice:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*yellow person detail boxes*/
+    #yDetailBox{
+        position: absolute;
+        width: 96px;
+        height: 106px;
+        border-radius: 5px;
+        top: 182px;
+        left: 830px;
+        margin: auto;
+
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    #yAvatarBox{
+        position: absolute;
+        width: 76px;
+        height: 66px;
+        border-radius: 5px;
+        top: 8px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #132D4E;
+    }
+
+    #avatarYellow{
+        position: absolute;
+        width: 60px;
+        top: 1px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #avatarYellowName{
+        position: absolute;
+        width: max-content;
+        top: 83px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        font-weight: lighter;
+    }
+
+    #avatarYellowName:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*red person detail boxes*/
+    #rDetailBox{
+        position: absolute;
+        width: 96px;
+        height: 106px;
+        border-radius: 5px;
+        top: 314px;
+        left: 830px;
+        margin: auto;
+
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    #rAvatarBox{
+        position: absolute;
+        width: 76px;
+        height: 66px;
+        border-radius: 5px;
+        top: 8px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #132D4E;
+    }
+
+    #avatarRed{
+        position: absolute;
+        width: 60px;
+        top: 1px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #avatarRedName{
+        position: absolute;
+        width: max-content;
+        top: 83px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        font-weight: lighter;
+    }
+
+    #avatarRedName:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*green person detail boxes*/
+    #gDetailBox{
+        position: absolute;
+        width: 96px;
+        height: 106px;
+        border-radius: 5px;
+        top: 445px;
+        left: 830px;
+        margin: auto;
+
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    #gAvatarBox{
+        position: absolute;
+        width: 76px;
+        height: 66px;
+        border-radius: 5px;
+        top: 8px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #132D4E;
+    }
+
+    #avatarGreen{
+        position: absolute;
+        width: 60px;
+        top: 1px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #avatarGreenName{
+        position: absolute;
+        width: max-content;
+        top: 83px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        font-weight: lighter;
+    }
+
+    #avatarGreenName:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*restarts*/
+    #restartOne{
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border-radius: 5px;
+        top: 547px;
+        right: 591px;
+        margin: auto;
+        background-image: url("asserts/images/ludoDice.png");
+        background-size: cover;
+        opacity: 25%;
+    }
+
+    #restartTwo{
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border-radius: 5px;
+        top: 507px;
+        left: 660px;
+        margin: auto;
+        background-image: url("asserts/images/ludoDice.png");
+        background-size: cover;
+        opacity: 25%;
+    }
+
+    #restartThree{
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border-radius: 5px;
+        top: 612px;
+        right: 361px;
+        margin: auto;
+        background-image: url("asserts/images/ludoDice.png");
+        background-size: cover;
+        opacity: 25%;
+    }
+
+    #restartFour{
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border-radius: 5px;
+        top: 268px;
+        right: 660px;
+        margin: auto;
+        background-image: url("asserts/images/ludoDice.png");
+        background-size: cover;
+        opacity: 25%;
+    }
+
+    /*arrows*/
+    #arrowOne{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 543px;
+        right: 526px;
+        margin: auto;
+        background-image: url("asserts/images/arrow01.png");
+        background-size: cover;
+        color: red;
+        opacity: 50%;
+    }
+
+    #arrowTwo{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 489px;
+        right: 158px;
+        margin: auto;
+        background-image: url("asserts/images/arrow03.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowThree{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 435px;
+        right: 587px;
+        margin: auto;
+        background-image: url("asserts/images/arrow01.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowFour{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 382px;
+        right: 345px;
+        margin: auto;
+        background-image: url("asserts/images/arrow03.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowFive{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 326px;
+        right: 36px;
+        margin: auto;
+        background-image: url("asserts/images/arrow04.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowSix{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 272px;
+        right: 466px;
+        margin: auto;
+        background-image: url("asserts/images/arrow03.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowSeven{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 219px;
+        right: 218px;
+        margin: auto;
+        background-image: url("asserts/images/arrow01.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowEight{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 165px;
+        right: 589px;
+        margin: auto;
+        background-image: url("asserts/images/arrow04.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowNine{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 112px;
+        right: 96px;
+        margin: auto;
+        background-image: url("asserts/images/arrow01.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    #arrowTen{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        top: 58px;
+        right: 404px;
+        margin: auto;
+        background-image: url("asserts/images/arrow03.png");
+        background-size: cover;
+        opacity: 50%;
+    }
+
+    /*snakes*/
+    #snakeOne{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        top: 305px;
+        right: 115px;
+        margin: auto;
+        background-image: url("asserts/images/snake_2.png");
+        background-size: cover;
+    }
+
+    #snakeTwo{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        top: 505px;
+        right: 425px;
+        margin: auto;
+        background-image: url("asserts/images/snake_1.png");
+        background-size: cover;
+    }
+
+    #snakeThree{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        top: 185px;
+        right: 425px;
+        margin: auto;
+        background-image: url("asserts/images/snake_3.png");
+        background-size: cover;
+    }
+
+    #snakeFour{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        top: 78px;
+        right: 250px;
+        margin: auto;
+        background-image: url("asserts/images/snake_4.png");
+        background-size: cover;
+    }
+
+    #snakeFive{
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        top: 288px;
+        right: 370px;
+        margin: auto;
+        background-image: url("asserts/images/snake_5.png");
+        background-size: cover;
+    }
+
+    #snakeSix{
+        position: absolute;
+        width: 290px;
+        height: 350px;
+        border-radius: 5px;
+        top: 178px;
+        right: 500px;
+        margin: auto;
+        background-image: url("asserts/images/snake_10.png");
+        background-size: cover;
+        transform: rotate(335deg);
+    }
+
+    #snakeSeven{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        top: 405px;
+        right: 205px;
+        margin: auto;
+        background-image: url("asserts/images/snake_9.png");
+        background-size: cover;
+    }
+
+    #snakeEight{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 5px;
+        top: 160px;
+        right: 35px;
+        margin: auto;
+        background-image: url("asserts/images/snake_8.png");
+        background-size: cover;
+    }
+
+    #snakeNine{
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 5px;
+        top: 45px;
+        left: 485px;
+        margin: auto;
+        background-image: url("asserts/images/snake_10.png");
+        background-size: cover;
+    }
+
+    #snakeTen{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        top: 125px;
+        left: 245px;
+        margin: auto;
+        background-image: url("asserts/images/snake_1.png");
+        background-size: cover;
+    }
+
+    /*ladders*/
+    #ladderOne{
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 5px;
+        top: 450px;
+        right: 60px;
+        margin: auto;
+        background-image: url("asserts/images/ladder_1.png");
+        background-size: cover;
+    }
+
+    #ladderTwo{
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        border-radius: 5px;
+        top: 388px;
+        right: 354px;
+        margin: auto;
+        background-image: url("asserts/images/ladder_1.png");
+        background-size: cover;
+        transform: rotate(170deg);
+    }
+
+    #ladderThree{
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 5px;
+        top: 125px;
+        right: 458px;
+        margin: auto;
+        background-image: url("asserts/images/ladder_1.png");
+        background-size: cover;
+        transform: rotate(15deg);
+    }
+
+    #ladderFour{
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 5px;
+        top: 230px;
+        right: 208px;
+        margin: auto;
+        background-image: url("asserts/images/ladder_1.png");
+        background-size: cover;
+        transform: rotate(135deg);
+    }
+
+    #ladderFive{
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        top: 120px;
+        right: 170px;
+        margin: auto;
+        background-image: url("asserts/images/ladder_1.png");
+        background-size: cover;
+        transform: rotate(25deg);
+    }
+
+    /*display blur*/
+    #displayNight{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: none;
+    }
+
+    #displayBlur{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+    }
+
+    /*sun icon*/
+    #sunIcon{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 234px;
+        left: 40px;
+        opacity: 80%;
+        background-image: url("asserts/images/sun.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #sunIcon:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*night icon*/
+    #nightIcon{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 234px;
+        left: 40px;
+        opacity: 80%;
+        background-image: url("asserts/images/night.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #nightIcon:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*settings icon*/
+    #settingsIcon{
+        width: 28px;
+        height: 30px;
+        position: absolute;
+        top: 35px;
+        left: 40px;
+        opacity: 70%;
+        background-image: url("asserts/images/settings.png");
+        background-size: cover;
+    }
+
+    #settingsIcon:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*home icon*/
+    #homeIcon{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 85px;
+        left: 40px;
+        opacity: 70%;
+        background-image: url("asserts/images/home icon.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #homeIcon:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*who icon*/
+    #whoIconOne{
+        width: 32px;
+        height: 30px;
+        position: absolute;
+        top: 135px;
+        left: 40px;
+        opacity: 70%;
+        background-image: url("asserts/images/who icon.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #whoIconOne:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    #whoIconTwo{
+        width: 32px;
+        height: 30px;
+        position: absolute;
+        top: 135px;
+        left: 40px;
+        opacity: 70%;
+        background-image: url("asserts/images/who icon.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #whoIconTwo:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    #whoIconThree{
+        width: 32px;
+        height: 30px;
+        position: absolute;
+        top: 135px;
+        left: 40px;
+        opacity: 70%;
+        background-image: url("asserts/images/who icon.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #whoIconThree:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+/*book icon*/
+    #bookIcon{
+        width: 31px;
+        height: 30px;
+        position: absolute;
+        top: 185px;
+        left: 40px;
+        opacity: 70%;
+        background-image: url("asserts/images/book icon.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #bookIcon:hover{
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    /*home card*/
+    #homeCard{
+        width: 90%;
+        max-width: 500px;
+        height: 200px;
+        color: white;
+        text-align: center;
+        padding: 50px 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /*background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+    }
+
+    #leavingGamePara{
+        position: absolute;
+        font-size: 35px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    #homeCard_para{
+        position: absolute;
+        font-size: 20px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 110px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    #homeCard_yesBtn{
+        position: absolute;
+        width: 90px;
+        height: 40px;
+        color: white;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        top: 195px;
+        bottom: 0;
+        left: 0;
+        right: 100px;
+        margin: auto;
+    }
+
+    #homeCard_yesBtn:hover{
+        background: rgba(50, 205, 50, 0.5);
+        box-shadow: 2px 2px 142px 4px limegreen;
+        border: 1px solid rgba(50, 205, 50, 0.53);
+        cursor: pointer;
+    }
+
+    #homeCard_yesPara{
+        position: relative;
+        font-size: 16px;
+        bottom: 0;
+        top: 12px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #homeCard_noBtn{
+        position: absolute;
+        width: 90px;
+        height: 40px;
+        color: white;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        top: 195px;
+        bottom: 0;
+        right: 0;
+        left: 100px;
+        margin: auto;
+    }
+
+    #homeCard_noBtn:hover{
+        background: rgba(255, 0, 0, 0.5);
+        box-shadow: 2px 2px 142px 4px red;
+        border: 1px solid rgba(255, 0, 0, 0.5);
+        cursor: pointer;
+    }
+
+    #homeCard_noPara{
+        position: relative;
+        font-size: 16px;
+        bottom: 0;
+        top: 12px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /*rules card*/
+    #rulesCard{
+        width: 90%;
+        max-width: 700px;
+        height: 350px;
+        color: white;
+        text-align: center;
+        padding: 50px 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /*background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+    }
+
+    #rulesPara{
+        position: absolute;
+        font-size: 35px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    #ruleTopicOne{
+        position: absolute;
+        font-size: 22px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 105px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        color: rgba(50, 205, 50, 0.7);
+    }
+
+    #ruleOne{
+        position: absolute;
+        font-size: 16px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 138px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    #cancelIconFive{
+        display: none;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-image: url("asserts/images/cancelIcon.png");
+        background-size: cover;
+        top: 0;
+        bottom: 370px;
+        left: 685px;
+        right: 0;
+        margin: auto;
+        opacity: 50%;
+        border-radius: 100%;
+    }
+
+    #cancelIconFive:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 100px 4px white;
+    }
+
+    #cancelIcon{
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-image: url("asserts/images/cancelIcon.png");
+        background-size: cover;
+        top: 0;
+        bottom: 238px;
+        left: 500px;
+        right: 0;
+        margin: auto;
+        opacity: 50%;
+        border-radius: 100%;
+    }
+
+    #cancelIcon:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 100px 4px white;
+    }
+
+    /*setings card*/
+    #settingsCard{
+        width: 90%;
+        max-width: 500px;
+        height: 200px;
+        color: white;
+        text-align: center;
+        padding: 50px 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /*background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+    }
+
+    #settingsCard_para{
+        position: absolute;
+        font-size: 35px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    #gameSoundPara{
+        position: absolute;
+        font-size: 25px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 120px;
+        right: 160px;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    #soundPara{
+        position: absolute;
+        font-size: 25px;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: lighter;
+        top: 180px;
+        right: 160px;
+        bottom: 0;
+        left: 78px;
+        margin: auto;
+    }
+
+/*toggle swich*/
+    /*swick one*/
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 32px;
+        top: 70px;
+        left: 100px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: rgba(50, 205, 50, 0.7);
+        box-shadow: 2px 2px 100px 2px limegreen;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    /*swick two*/
+    .switchTwo {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 32px;
+        top: 130px;
+        left: 37px;
+    }
+
+    .switchTwo input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    #cancelIconTwo{
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-image: url("asserts/images/cancelIcon.png");
+        background-size: cover;
+        top: 0;
+        bottom: 238px;
+        left: 500px;
+        right: 0;
+        margin: auto;
+        opacity: 50%;
+        border-radius: 100%;
+    }
+
+    #cancelIconTwo:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 122px 4px white;
+    }
+
+    /*cube*/
+    #cubeHead{
+        display: none;
+        position: relative;
+        font-size: 35px;
+        width: max-content;
+        bottom: 0;
+        top: 120px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #cube .front {
+        transform:
+                translateZ(100px);
+    }
+
+    #cube .back {
+        transform:
+                rotateX(-180deg)
+                translateZ(100px);
+    }
+
+    #cube .right {
+        transform:
+                rotateY(90deg)
+                translateZ(100px);
+    }
+
+    #cube .left {
+        transform:
+                rotateY(-90deg)
+                translateZ(100px);
+    }
+
+    #cube .top {
+        transform:
+                rotateX(90deg)
+                translateZ(100px);
+    }
+
+    #cube .bottom {
+        transform:
+                rotateX(-90deg)
+                translateZ(100px);
+    }
+
+    .container {
+        display: none;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 0 auto 40px;
+        /*border: 1px solid #FFF;*/
+
+        perspective: 1000px;
+        perspective-origin: 50% 100%;
+    }
+
+    #cube {
+        width: 100%;
+        height: 100%;
+        top: 240px;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: transform 3s;
+    }
+
+    #cube:hover {
+        cursor: pointer;
+    }
+
+    #cube div {
+        background: rgba(255, 255, 255, 0.8);
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 30%;
+        margin: 0 auto;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 500%;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .dot {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 2px 2px 80px 2px black;
+    }
+
+    .front .dot1 { top: 85px; left: 85px; }
+
+    .back .dot1 { top: 45px; left: 45px; }
+    .back .dot2 { top: 125px; left: 125px; }
+
+    .right .dot1 { top: 45px; left: 45px; }
+    .right .dot2 { top: 85px; left: 85px; }
+    .right .dot3 { top: 125px; left: 125px; }
+
+    .left .dot1 { top: 45px; left: 45px; }
+    .left .dot2 { top: 45px; left: 125px; }
+    .left .dot3 { top: 125px; left: 45px; }
+    .left .dot4 { top: 125px; left: 125px; }
+
+    .top .dot1 { top: 45px; left: 45px; }
+    .top .dot2 { top: 45px; left: 125px; }
+    .top .dot3 { top: 85px; left: 85px; }
+    .top .dot4 { top: 125px; left: 45px; }
+    .top .dot5 { top: 125px; left: 125px; }
+
+    .bottom .dot1 { top: 45px; left: 45px; }
+    .bottom .dot2 { top: 45px; left: 85px; }
+    .bottom .dot3 { top: 45px; left: 125px; }
+    .bottom .dot4 { top: 125px; left: 45px; }
+    .bottom .dot5 { top: 125px; left: 85px; }
+    .bottom .dot6 { top: 125px; left: 125px; }
+
+    #cancelIconThree{
+        display: none;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-image: url("asserts/images/cancelIcon.png");
+        background-size: cover;
+        top: 35px;
+        left: 1170px;
+        opacity: 50%;
+        border-radius: 100%;
+    }
+
+    #cancelIconThree:hover{
+        cursor: pointer;
+    }
+
+    /*guess board*/
+    #guessHead{
+        display: none;
+        position: relative;
+        font-size: 35px;
+        width: max-content;
+        bottom: 0;
+        top: 90px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-family: 'Jost', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #guessBoard{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        /*border: 2px solid red;*/
+        border-radius: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+        transition: all 4s;
+        cursor: pointer;
+    }
+
+    #guessBlue{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 0px 0px 100% 0px;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(64, 155, 255, 0.6);
+        box-shadow: 2px 2px 100px 2px dodgerblue;
+    }
+
+    #guessYellow{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 0px 0px 0px 100%;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-color: rgba(255,255,0,0.6);
+        box-shadow: 2px 2px 100px 2px yellow;
+    }
+
+    #guessRed{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 0px 100% 0px 0px;
+        top: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(255,0,0,0.6);
+        box-shadow: 2px 2px 100px 2px red;
+    }
+
+    #guessGreen{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 100% 0px 0px 0px;
+        top: 0;
+        left: 0;
+        margin: auto;
+        background-color: rgba(0,255,114,0.6);
+        box-shadow: 2px 2px 100px 2px limegreen;
+    }
+
+    /*guess board two*/
+    #guessBoardTwo{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        /*border: 2px solid red;*/
+        border-radius: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+        transition: all 4s;
+        cursor: pointer;
+    }
+
+    #guessBlueTwo{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 0px 0px 100% 0px;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(64, 155, 255, 0.6);
+        box-shadow: 2px 2px 100px 2px dodgerblue;
+    }
+
+    #guessYellowTwo{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 0px 0px 0px 100%;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-color: rgba(255,255,0,0.6);
+        box-shadow: 2px 2px 100px 2px yellow;
+    }
+
+    #guessRedTwo{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 0px 100% 0px 0px;
+        top: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 2px 2px 100px 2px black;
+    }
+
+    #guessGreenTwo{
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        border-radius: 100% 0px 0px 0px;
+        top: 0;
+        left: 0;
+        margin: auto;
+        background-color: rgba(0,255,114,0.6);
+        box-shadow: 2px 2px 100px 2px limegreen;
+    }
+
+    #pointer{
+        position: absolute;
+        width: 37px;
+        height: 52px;
+        /*border: 2px solid red;*/
+        top: 0;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-image: url("asserts/images/pointer.png");
+        background-size: cover;
+        display: none;
+    }
+
+    #cancelIconFour{
+        display: none;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-image: url("asserts/images/cancelIcon.png");
+        background-size: cover;
+        top: 35px;
+        left: 1170px;
+        opacity: 50%;
+        border-radius: 100%;
+    }
+
+    #cancelIconFour:hover{
+        cursor: pointer;
+        box-shadow: 2px 2px 100px 4px white;
+    }
+
+</style>
+
+<body>
+<!--spash screen-->
+    <div id="splash_container">
+        <img src="asserts/images/splash_snack.jpg" alt="">
+        <img src="asserts/images/loader.gif" alt="">
+    </div>
+
+<!--meny screen-->
+    <div id="manu_container">
+        <img src="asserts/images/manu%20bg.jpg" alt="">
+
+<!--cards-->
+        <div id="cardOne" data-tilt>
+            <img id="cardOneImg" src="asserts/images/two-white-dice-removebg-preview.png" alt="">
+            <h1 id="numberTwo">2 <br> Players</h1>
+            <p id="cardOne_para">This board is suitable for <br> two players. Play snack & ladder with one of your favorite players
+                 and have fun. Congratulations!</p>
+            <input id="cardOne_inputOne" type="text" placeholder="blue player name" pattern="[a-z]*">
+            <input id="cardOne_inputTwo" type="text" placeholder="green player name" pattern="[a-z]*">
+            <a id="cardOne_a">Start</a>
+            <p id="cardOne_paraTwo">Enter the names of the three players!</p>
+           <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
+        </div>
+
+        <div id="cardTwo" data-tilt>
+            <img id="cardTwoImg" src="asserts/images/three-white-dice-removebg-preview.png" alt="">
+            <h1 id="numberThree">3 <br> Players</h1>
+            <p id="cardTwo_para">This board is suitable for <br> three players. Play snack & ladder with two of your favorite players
+                and have fun. Congratulations!</p>
+            <input id="cardTwo_inputOne" type="text" placeholder="blue player name" pattern="[a-z]*">
+            <input id="cardTwo_inputTwo" type="text" placeholder="yellow player name" pattern="[a-z]*">
+            <input id="cardTwo_inputThree" type="text" placeholder="green player name" pattern="[a-z]*">
+            <a id="cardTwo_a">Start</a>
+            <p id="cardTwo_paraTwo">Enter the names of the three players!</p>
+            <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
+        </div>
+
+        <div id="cardThree" data-tilt>
+            <img id="cardThreeImg" src="asserts/images/four-white-dice.png" alt="">
+            <h1 id="numberFour">4 <br> Players</h1>
+            <p id="cardThree_para">This board is suitable for <br> four players. Play snack & ladder with three of your favorite players
+                and have fun. Congratulations!</p>
+                <input id="cardThree_inputOne" type="text" placeholder="blue player name" pattern="[a-z]*">
+                <input id="cardThree_inputTwo" type="text" placeholder="yellow player name" pattern="[a-z]*">
+                <input id="cardThree_inputThree" type="text" placeholder="red player name" pattern="[a-z]*">
+                <input id="cardThree_inputFour" type="text" placeholder="green player name" pattern="[a-z]*">
+            <a id="cardThree_a">Start</a>
+            <p id="cardThree_paraTwo">Enter the names of the four players!</p>
+            <!-- <img id="cardOne_back" src="asserts/images/back%20icon.png" alt="">-->
+        </div>
+
+<!--night mood-->
+        <div id="displayNight"></div>
+
+<!--ludo board-->
+        <section id="ludoBoard">
+
+    <!--empty boxes-->
+            <div id="emptyBoxesTop">
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+                <div class="gridItems"></div>
+            </div>
+
+    <!--restarts-->
+            <div id="restartOne"></div>
+
+    <!--arrows-->
+            <div id="arrowOne"></div>
+            <div id="arrowTwo"></div>
+            <div id="arrowThree"></div>
+            <div id="arrowFour"></div>
+            <div id="arrowFive"></div>
+            <div id="arrowSix"></div>
+            <div id="arrowSeven"></div>
+            <div id="arrowEight"></div>
+            <div id="arrowNine"></div>
+            <div id="arrowTen"></div>
+
+    <!--snakes-->
+            <div id="snakeOne"></div>
+            <div id="snakeTwo"></div>
+            <div id="snakeThree"></div>
+            <div id="snakeFour"></div>
+            <div id="snakeFive"></div>
+            <div id="snakeSix"></div>
+            <div id="snakeSeven"></div>
+            <div id="snakeEight"></div>
+            <div id="snakeNine"></div>
+            <div id="snakeTen"></div>
+
+    <!--ladders-->
+            <div id="ladderOne"></div>
+            <div id="ladderTwo"></div>
+            <div id="ladderThree"></div>
+            <div id="ladderFour"></div>
+            <div id="ladderFive"></div>
+
+    <!--blue detail box-->
+            <div id="bDetailBox">
+                <div id="bAvatarBox">
+                    <img id="avatarBlue" src="asserts/images/avatarOne.png" alt="">
+                </div>
+
+                <p id="avatarBlueName">nick</p>
+                <div id="bDiceDatailBox">
+                    <img id="bDice" src="asserts/images/click%20icon.png" alt="">
+                </div>
+            </div>
+
+    <!--yellow detail box-->
+            <div id="yDetailBox">
+                <div id="yAvatarBox">
+                    <img id="avatarYellow" src="asserts/images/avatar02.png" alt="">
+                </div>
+                <p id="avatarYellowName">dom</p>
+            </div>
+
+    <!--red detail box-->
+            <div id="rDetailBox">
+                <div id="rAvatarBox">
+                    <img id="avatarRed" src="asserts/images/avatar03.png" alt="">
+                </div>
+                <p id="avatarRedName">loky</p>
+            </div>
+
+    <!--green detail box-->
+            <div id="gDetailBox">
+                <div id="gAvatarBox">
+                    <img id="avatarGreen" src="asserts/images/avatar04.png" alt="">
+                </div>
+                <p id="avatarGreenName">freddie</p>
+            </div>
+
+    <!--blue box-->
+            <div id="blueBox">
+                <div id="bFirstStoneBox" style="box-shadow: 2px 2px 150px 2px dodgerblue">
+                    <div id="bFirstStone"></div>
+                </div>
+            </div>
+
+    <!--yellow box-->
+            <div id="yellowBox">
+                <div id="yFirstStoneBox" style="box-shadow: 2px 2px 150px 2px yellow;">
+                    <div id="yFirstStone"></div>
+                </div>
+            </div>
+
+    <!--red box-->
+            <div id="redBox">
+                <div id="rFirstStoneBox" style="box-shadow: 2px 2px 150px 2px red;">
+                    <div id="rFirstStone"></div>
+                </div>
+            </div>
+
+    <!--green box-->
+            <div id="greenBox">
+                <div id="gFirstStoneBox" style="box-shadow: 2px 2px 150px 2px limegreen;">
+                    <div id="gFirstStone"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--icons-->
+        <div id="nightIcon"></div>
+        <div id="sunIcon"></div>
+        <div id="settingsIcon"></div>
+        <div id="homeIcon"></div>
+        <div id="whoIconOne"></div>
+        <div id="whoIconTwo"></div>
+        <div id="whoIconThree"></div>
+        <div id="bookIcon"></div>
+
+<!--display blur-->
+        <div id="displayBlur"></div>
+
+<!--settings card-->
+        <div id="settingsCard">
+            <p id="settingsCard_para">Game Settings</p>
+
+            <p id="gameSoundPara">Game sounds :</p>
+
+            <!--toggle buttons-->
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+
+            <p id="soundPara">Sounds :</p>
+
+            <label class="switchTwo">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+
+            <div id="cancelIconTwo"></div>
+        </div>
+
+<!--home card-->
+        <div id="homeCard">
+            <p id="leavingGamePara">Leaving a Game</p>
+            <p id="homeCard_para">Leaving a game ruins it for everyone and <br> you forfeit all potential rewards. You will
+                <br> also get an abandon in your statistics. <br> Are you sure you want to leave?</p>
+            <div id="homeCard_yesBtn">
+                <p id="homeCard_yesPara">Yes</p>
+            </div>
+            <div id="homeCard_noBtn">
+                <p id="homeCard_noPara">No</p>
+            </div>
+            <div id="cancelIcon"></div>
+        </div>
+
+<!--guess card-->
+        <h1 id="guessHead">Click the Guess Board & Who Goes First?</h1>
+        <!--guess board one-->
+        <div id="guessBoard">
+            <div id="guessBlue"></div>
+            <div id="guessYellow"></div>
+            <div id="guessRed"></div>
+            <div id="guessGreen"></div>
+        </div>
+
+        <!--guess board two-->
+        <div id="guessBoardTwo">
+            <div id="guessBlueTwo"></div>
+            <div id="guessYellowTwo"></div>
+            <div id="guessRedTwo">Again</div>
+            <div id="guessGreenTwo"></div>
+        </div>
+
+        <div id="pointer"></div>
+
+        <div id="cancelIconFour"></div>
+
+<!--rules card-->
+        <div id="rulesCard">
+            <p id="rulesPara">Rules</p>
+            <p id="ruleTopicOne">Beginning the Game :</p>
+            <p id="ruleOne">1.  Each player puts their counter on the space that says 'start here'. <br> <br> 2.  Take it in turns to roll the dice. Move your counter forward the number of spaces shown on the dice.
+                <br> <br> 3.  If your counter lands at the bottom of a ladder, you can move up to the top of the ladder <br> <br> 4.  If your counter lands on the head of a snake, you must slide down to the bottom of the snake.
+                <br> <br> 5.  The first player to get to the space that says 'home' is the winner.</p>
+            <div id="cancelIconFive"></div>
+        </div>
+
+<!--cube-->
+        <h1 id="cubeHead">Click the dice to roll</h1>
+
+        <!--container-->
+        <section class="container">
+            <div id="cube">
+
+                <!--cube front-->
+                <div class="front">
+                    <!--cube front dot-->
+                    <span class="dot dot1"></span>
+                </div>
+
+                <!--cube back-->
+                <div class="back">
+                    <!--cube back dots-->
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>
+                </div>
+
+                <!--cube right-->
+                <div class="right">
+                    <!--cube right dots-->
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>
+                    <span class="dot dot3"></span>
+                </div>
+
+                <!--cube left-->
+                <div class="left">
+                    <!--cube left dots-->
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>
+                    <span class="dot dot3"></span>
+                    <span class="dot dot4"></span>
+                </div>
+
+                <!--cube top-->
+                <div class="top">
+                    <!--cube top dots-->
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>
+                    <span class="dot dot3"></span>
+                    <span class="dot dot4"></span>
+                    <span class="dot dot5"></span>
+                </div>
+
+                <!--cube bottom-->
+                <div class="bottom">
+                    <!--cube bottom dots-->
+                    <span class="dot dot1"></span>
+                    <span class="dot dot2"></span>
+                    <span class="dot dot3"></span>
+                    <span class="dot dot4"></span>
+                    <span class="dot dot5"></span>
+                    <span class="dot dot6"></span>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="cancelIconThree"></div>
+
+    </div>
+
+<script src="asserts/jQuery/jquery-3.6.0.min.js"></script>
+<script src="asserts/vanillaTilt/vanilla-tilt.js"></script>
+<script src="asserts/jQuery/jquery-ui.min.js"></script>
+
+<script>
+
+/*loading*/
+    $(window).on('load',function () {
+        console.log("Window Loaded");
+        $("#splash_container").fadeOut(1000);
+    });
+
+/*cards*/
+    $("#cardOne").click(function () {
+        $("#cardOne_inputOne, #cardOne_inputTwo, #cardOne_paraTwo, #cardOne_a, #cardTwoImg, #numberThree, #cardTwo_para, #cardThreeImg, #numberFour, #cardThree_para").css("display","block");
+        $("#cardOne_para, #cardOneImg, #numberTwo, #cardTwo_inputOne, #cardTwo_inputTwo, #cardTwo_inputThree, #cardTwo_a, #cardTwo_paraTwo, #cardThree_inputOne, #cardThree_inputTwo, #cardThree_inputThree, #cardThree_inputFour, #cardThree_a, #cardThree_paraTwo").css("display","none");
+    });
+
+    $("#cardTwo").click(function () {
+        $("#cardTwo_inputOne, #cardTwo_inputTwo, #cardTwo_inputThree, #cardTwo_paraTwo, #cardTwo_a, #cardOneImg, #numberTwo, #cardOne_para, #cardThreeImg, #numberFour, #cardThree_para").css("display","block");
+        $("#cardTwo_para, #cardTwoImg, #numberThree, #cardThree_inputOne, #cardThree_inputTwo, #cardThree_inputThree, #cardThree_inputFour, #cardThree_a, #cardThree_paraTwo, #cardOne_inputOne, #cardOne_inputTwo, #cardOne_a, #cardOne_paraTwo").css("display","none");
+    });
+
+    $("#cardThree").click(function () {
+        $("#cardThree_inputOne, #cardThree_inputTwo, #cardThree_inputThree, #cardThree_inputFour, #cardThree_paraTwo, #cardThree_a, #cardOneImg, #numberTwo, #cardOne_para, #cardTwoImg, #numberThree, #cardTwo_para").css("display","block");
+        $("#cardThree_para, #cardThreeImg, #numberFour, #cardOne_inputOne, #cardOne_inputTwo, #cardOne_a, #cardOne_paraTwo, #cardTwo_inputOne, #cardTwo_inputTwo, #cardTwo_inputThree, #cardTwo_a, #cardTwo_paraTwo").css("display","none");
+    });
+
+/*cards_a*/
+    $("#cardOne_a").click(function () {
+        $("#cardOne, #cardTwo, #cardThree, #yFirstStone, #ySecondStone, #yThirdStone, #yFourthStone, #yDiceDatailBox, #rFirstStoneBox, #yFirstStoneBox, #rDetailBox, #yDetailBox, #rSecondStone, #rThirdStone, #rFourthStone, #rDiceDatailBox, #whoIconThree, #whoIconTwo").css("display","none");
+        $("#ludoBoard, #nightIcon, #whoIconOne, #homeIcon, #bookIcon").css("display","block");
+        $("#avatarYellowName, #avatarRedName").text("?");
+        $("#avatarBlueName").text($("#cardOne_inputOne").val());
+        $("#avatarGreenName").text($("#cardOne_inputTwo").val());
+    });
+
+    $("#cardTwo_a").click(function () {
+        $("#cardOne, #cardTwo, #cardThree, #rFirstStoneBox, #rDetailBox, #rThirdStone, #rFourthStone, #rDiceDatailBox, #whoIconOne, #whoIconThree").css("display","none");
+        $("#ludoBoard, #nightIcon, #whoIconTwo, #homeIcon, #bookIcon").css("display","block");
+        $("#avatarRedName").text("?");
+        $("#avatarBlueName").text($("#cardTwo_inputOne").val());
+        $("#avatarYellowName").text($("#cardTwo_inputTwo").val());
+        $("#avatarGreenName").text($("#cardTwo_inputThree").val());
+    });
+
+    $("#cardThree_a").click(function () {
+        $("#cardOne, #cardTwo, #cardThree, #whoIconOne, #whoIconTwo").css("display","none");
+        $("#ludoBoard, #nightIcon, #whoIconThree, #homeIcon, #bookIcon").css("display","block");
+        $("#avatarBlueName").text($("#cardThree_inputOne").val());
+        $("#avatarYellowName").text($("#cardThree_inputTwo").val());
+        $("#avatarRedName").text($("#cardThree_inputThree").val());
+        $("#avatarGreenName").text($("#cardThree_inputFour").val());
+
+    });
+
+/*display cube*/
+    $("#bDice , #yDice , #rDice , #gDice").click(function () {
+        $("#displayBlur, .container, #cubeHead, #cancelIconThree").css("display","block");
+    });
+
+/*icons*/
+    $("#soundIcon").click(function () {
+        $("#soundOffIcon").css("display","block");
+        $("#soundIcon").css("display","none");
+    });
+
+    $("#soundOffIcon").click(function () {
+        $("#soundIcon").css("display","block");
+        $("#soundOffIcon").css("display","none");
+    });
+
+    $("#nightIcon").click(function () {
+        $("#displayNight, #sunIcon").css("display","block");
+        $("#nightIcon").css("display","none");
+    });
+
+    $("#sunIcon").click(function () {
+        $("#nightIcon").css("display","block");
+        $("#displayNight, #sunIcon").css("display","none");
+    });
+
+    $("#settingsIcon").click(function () {
+        $("#displayBlur, #settingsCard").css("display","block");
+    });
+
+    $("#homeIcon").click(function () {
+        $("#displayBlur, #homeCard").css("display","block");
+    });
+
+    $("#bookIcon").click(function () {
+        $("#rulesCard, #displayBlur, #cancelIconFive").css("display","block");
+    });
+
+    $("#whoIconOne").click(function () {
+        $("#displayBlur, #guessBoard, #pointer, #guessHead, #cancelIconFour").css("display","block");
+        $("#guessYellow").css("background-color","rgba(0,255,114,0.6)");
+        $("#guessYellow").css("box-shadow","2px 2px 100px 2px limegreen");
+        $("#guessRed").css("background-color","rgba(64, 155, 255, 0.6)");
+        $("#guessRed").css("box-shadow","2px 2px 100px 2px dodgerblue");
+    });
+
+    $("#whoIconTwo").click(function () {
+        $("#displayBlur, #guessBoardTwo, #pointer, #guessHead, #cancelIconFour").css("display","block");
+        $("#guessRed").css("display","none");
+    });
+
+    $("#whoIconThree").click(function () {
+        $("#displayBlur, #guessBoard, #pointer, #guessHead, #cancelIconFour").css("display","block");
+    });
+
+/*cancle icons*/
+    $("#cancelIcon").click(function () {
+        $("#homeCard, #displayBlur").css("display","none");
+    });
+
+    $("#cancelIconTwo").click(function () {
+        $("#settingsCard, #displayBlur").css("display","none");
+    });
+
+    $("#cancelIconThree").click(function () {
+        $("#displayBlur, .container, #cubeHead, #cancelIconThree").css("display","none");
+    });
+
+    $("#cancelIconFour").click(function () {
+        $("#displayBlur, #guessBoard, #guessBoardTwo, #cancelIconFour, #pointer, #guessHead").css("display","none");
+    });
+
+    $("#cancelIconFive").click(function () {
+        $("#displayBlur, #cancelIconFive, #rulesCard").css("display","none");
+    });
+
+/*home card buttons*/
+    $("#homeCard_yesBtn").click(function () {
+        document.location.reload(true);
+    });
+
+    $("#homeCard_noBtn").click(function () {
+        $("#homeCard, #displayBlur").css("display","none");
+    });
+
+/*draggables*/
+    $( "#bFirstStone, #bSecondStone, #bThirdStone, #bFourthStone, #yFirstStone, #ySecondStone, #yThirdStone, #yFourthStone, #rFirstStone, #rSecondStone, #rThirdStone, #rFourthStone, #gFirstStone, #gSecondStone, #gThirdStone, #gFourthStone" ).draggable();
+
+/*cube rolling*/
+    var cube = document.getElementById('cube');
+
+    var min = 1;
+    var max = 24;
+
+    cube.onclick = function() {
+        var xRand = getRandom(max, min);
+        var yRand = getRandom(max, min);
+
+        cube.style.webkitTransform = 'rotateX('+xRand+'deg) rotateY('+yRand+'deg)';
+        cube.style.transform = 'rotateX('+xRand+'deg) rotateY('+yRand+'deg)';
+    }
+
+    function getRandom(max, min) {
+        return (Math.floor(Math.random() * (max-min)) + min) * 90;
+    }
+
+/*guess boards rotation*/
+    var guessBoard = document.getElementById('guessBoard');
+    var guessBoardTwo = document.getElementById('guessBoardTwo');
+
+    guessBoard.onclick = function() {
+        let x = Math.floor((Math.random() * 4) + 1);
+
+        if (x == 1){
+            $("#guessBoard").css("transform","rotate(765deg)");
+        }else if (x == 2){
+            $("#guessBoard").css("transform","rotate(855deg)");
+        }else if (x == 3){
+            $("#guessBoard").css("transform","rotate(945deg)");
+        }else if (x == 4){
+            $("#guessBoard").css("transform","rotate(1030deg)");
+        }
+    }
+
+    guessBoardTwo.onclick = function() {
+        let x = Math.floor((Math.random() * 4) + 1);
+
+        if (x == 1){
+            $("#guessBoardTwo").css("transform","rotate(765deg)");
+        }else if (x == 2){
+            $("#guessBoardTwo").css("transform","rotate(855deg)");
+        }else if (x == 3){
+            $("#guessBoardTwo").css("transform","rotate(945deg)");
+        }else if (x == 4){
+            $("#guessBoardTwo").css("transform","rotate(1030deg)");
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
