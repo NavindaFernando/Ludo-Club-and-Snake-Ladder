@@ -4,8 +4,6 @@ Ludo-Club & Snake-Ladder :bowling:
 
 ![ludoClub](https://user-images.githubusercontent.com/86073690/174473861-cf6c4f3a-8194-4c5e-8d1a-903237df16d4.png)
 
-![Screenshot (925)](https://user-images.githubusercontent.com/86073690/226033225-a189360d-397d-4377-8ceb-6a37a20536a0.png)
-
 ***
 
 <h6 align="center">
